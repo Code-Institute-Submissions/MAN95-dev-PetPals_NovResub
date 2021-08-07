@@ -10,7 +10,17 @@ body {
     font-family: 'Lato';
 }
 
-/* from Bulma */
+/* -------------------------------- Navbar */
+.logo-font {
+    font-family: 'Fredoka One', cursive;
+    font-size: 40px; 
+}
+
+.navbar-font {
+    font-family: 'Lato';
+    font-size: 20px;
+}
+
 .icon {
     align-items: center;
     display: inline-flex;
@@ -23,21 +33,21 @@ body {
     width: fit-content;
 }
 
-.btn-black {
-    background: black;
-    color: white;
+.btn-blue {
+    background: white;
+    color: #006994;
 }
 
-.text-black {
-    color: #000 !important;
-}
-
-.border-black {
-    border: 1px solid black !important;
+.text-white {
+    color: white !important;
 }
 
 .bg-black {
     background: #000 !important;
+}
+
+.navbar, #topnav {
+    background-color: #006994; 
 }
 
 /* -------------------------------- Media Queries */
