@@ -21,6 +21,10 @@ body {
     font-size: 20px;
 }
 
+.fa-paw, .fa-user, .fa-shopping-cart {
+    color: #FFD700;
+}
+
 .icon {
     align-items: center;
     display: inline-flex;
@@ -49,6 +53,18 @@ body {
 .navbar, #topnav {
     background-color: #006994; 
 }
+
+/* -------------------------------- Navbar */
+#footer {
+    background-color: #006994;
+}
+
+.footer-item {
+    text-decoration: none;
+    color: white; 
+}
+
+
 
 /* -------------------------------- Media Queries */
 
