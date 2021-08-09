@@ -2,13 +2,14 @@ html {
     height: 100%;
 }
 
-body {
+/*body {
     background: url('/media/pets.png') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
 }
+*/
 
 /* -------------------------------- Navbar */
 .logo-font {
@@ -21,7 +22,7 @@ body {
     font-size: 20px;
 }
 
-.fa-paw, .fa-user, .fa-shopping-cart {
+.fa-paw {
     color: #FFD700;
 }
 
@@ -79,6 +80,22 @@ footer a:hover {
     text-decoration: underline;
   }
 
+/* Styling for home page */
+.home-carousel-item {
+    height: 66vh;
+    width: 100vw;
+  }
+  
+  .carousel-image {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .responsive {
+    width: 100%;
+    height: 100%;
+  }
 
 /* -------------------------------- Media Queries */
 
