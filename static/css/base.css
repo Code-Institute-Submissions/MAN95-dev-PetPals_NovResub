@@ -80,22 +80,41 @@ footer a:hover {
     text-decoration: underline;
   }
 
-/* Styling for home page */
+/* -------------------------------- Styling for home page */
+
+.shipping-font {
+    font-size: 14px;
+}
+
 .home-carousel-item {
     height: 66vh;
     width: 100vw;
   }
   
-  .carousel-image {
+.carousel-image {
     height: 100%;
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
 
-  .responsive {
+.responsive {
     width: 100%;
     height: 100%;
   }
+
+.home-button {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #FFD700;
+    font-family: 'Fredoka One', cursive;
+    font-size: 25px;
+}
+
+.shop-by-pet {
+    font-family: 'Fredoka One', cursive;
+    font-size: 50px;
+}
 
 /* -------------------------------- Media Queries */
 
