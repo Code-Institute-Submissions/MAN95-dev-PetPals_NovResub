@@ -16,11 +16,11 @@
                 Dogs
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="dogs-link">
-                <a href="" class="dropdown-item">Dog Food</a>
-                <a href="" class="dropdown-item ">Dog Treats</a>
-                <a href="" class="dropdown-item ">Dog Toys</a>
-                <a href="" class="dropdown-item">Dog Beds</a>
-                <a href="" class="dropdown-item">Dog Flea and Tick</a>
+                <a href="{% url 'items' %}?type=dog_food" class="dropdown-item">Dog Food</a>
+                <a href="{% url 'items' %}?type=dog_treats" class="dropdown-item ">Dog Treats</a>
+                <a href="{% url 'items' %}?type=dog_toys" class="dropdown-item ">Dog Toys</a>
+                <a href="{% url 'items' %}?type=dog_beds" class="dropdown-item">Dog Beds</a>
+                <a href="{% url 'items' %}?type=dog_flea_and_tick" class="dropdown-item">Dog Flea and Tick</a>
             </div>
         </li>
 
@@ -29,11 +29,11 @@
                 Cats
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="cats-link">
-                <a href="" class="dropdown-item">Cat Food</a>
-                <a href="" class="dropdown-item ">Cat Furniture</a>
-                <a href="" class="dropdown-item ">Cat Beds</a>
-                <a href="" class="dropdown-item">Litter</a>
-                <a href="" class="dropdown-item">Cat Flea and Tick</a>
+                <a href="{% url 'items' %}?type=cat_food" class="dropdown-item">Cat Food</a>
+                <a href="{% url 'items' %}?type=cat_furniture" class="dropdown-item ">Cat Furniture</a>
+                <a href="{% url 'items' %}?type=cat_beds" class="dropdown-item ">Cat Beds</a>
+                <a href="{% url 'items' %}?type=litter" class="dropdown-item">Litter</a>
+                <a href="{% url 'items' %}?type=cat_flea_and_tick" class="dropdown-item">Cat Flea and Tick</a>
             </div>
         </li>
 
@@ -42,11 +42,11 @@
                 Small Pets
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="smallpets-link">
-                <a href="" class="dropdown-item">Food and Treats</a>
-                <a href="" class="dropdown-item">Cages and Habitats</a>
-                <a href="" class="dropdown-item">Beds and Hideaways</a>
-                <a href="" class="dropdown-item">Bedding and Litter</a>
-                <a href="" class="dropdown-item">Toys and Habit Accessories</a>
+                <a href="{% url 'items' %}?type=food_and_treats" class="dropdown-item">Food and Treats</a>
+                <a href="{% url 'items' %}?type=cages_and_habitats" class="dropdown-item">Cages and Habitats</a>
+                <a href="{% url 'items' %}?type=beds_and_hideaways"class="dropdown-item">Beds and Hideaways</a>
+                <a href="{% url 'items' %}?type=bedding_and_litter" class="dropdown-item">Bedding and Litter</a>
+                <a href="{% url 'items' %}?type=tooys_and_habitat_accessories" class="dropdown-item">Toys and Habit Accessories</a>
             </div>
         </li>
 
@@ -55,11 +55,11 @@
                 Birds
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="birds-link">
-                <a href="" class="dropdown-item">Bird Cages</a>
-                <a href="" class="dropdown-item">Bird Food</a>
-                <a href="" class="dropdown-item">Bird Toys</a>
-                <a href="" class="dropdown-item">Perches and Playstands</a>
-                <a href="" class="dropdown-item">Bird Treats</a>
+                <a href="{% url 'items' %}?type=bird_cages" class="dropdown-item">Bird Cages</a>
+                <a href="{% url 'items' %}?type=bird_food" class="dropdown-item">Bird Food</a>
+                <a href="{% url 'items' %}?type=bird_toys" class="dropdown-item">Bird Toys</a>
+                <a href="{% url 'items' %}?type=perches_and_playstands" class="dropdown-item">Perches and Playstands</a>
+                <a href="{% url 'items' %}?type=bird_treats" class="dropdown-item">Bird Treats</a>
             </div>
         </li>
 
@@ -68,11 +68,11 @@
                 Fish
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="fish-link">
-                <a href="" class="dropdown-item">Aquariums</a>
-                <a href="" class="dropdown-item">Filters</a>
-                <a href="" class="dropdown-item">Sand and Gravel</a>
-                <a href="" class="dropdown-item">Water Care</a>
-                <a href="" class="dropdown-item">Fish Food</a>
+                <a href="{% url 'items' %}?type=aquariums" class="dropdown-item">Aquariums</a>
+                <a href="{% url 'items' %}?type=filters" class="dropdown-item">Filters</a>
+                <a href="{% url 'items' %}?type=sand_and_gravel" class="dropdown-item">Sand and Gravel</a>
+                <a href="{% url 'items' %}?type=water_care"class="dropdown-item">Water Care</a>
+                <a href="{% url 'items' %}?type=fish_food"class="dropdown-item">Fish Food</a>
             </div>
         </li>
 
@@ -81,11 +81,11 @@
                 Reptiles
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="reptiles-link">
-                <a href="" class="dropdown-item">Terrariums and Tanks</a>
-                <a href="" class="dropdown-item">Reptile Food</a>
-                <a href="" class="dropdown-item">Reptile Decor and Hideaways</a>
-                <a href="" class="dropdown-item">Reptile Substrate and Bedding</a>
-                <a href="" class="dropdown-item">Reptile Cleanup and Odor Control</a>
+                <a href="{% url 'items' %}?type=terrariums_and_tanks" class="dropdown-item">Terrariums and Tanks</a>
+                <a href="{% url 'items' %}?type=reptile_food" class="dropdown-item">Reptile Food</a>
+                <a href="{% url 'items' %}?type=reptile_decor_and_hideaways" class="dropdown-item">Reptile Decor and Hideaways</a>
+                <a href="{% url 'items' %}?type=reptile_substrate_and_bedding" class="dropdown-item">Reptile Substrate and Bedding</a>
+                <a href="{% url 'items' %}?type=reptile_cleanup_and_odor_control" class="dropdown-item">Reptile Cleanup and Odor Control</a>
             </div>
         </li>
 

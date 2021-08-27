@@ -1,17 +1,23 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Item
+from .models import Item, Type
 
 # Create your views here.
 
 def all_items(request):
-    """ A view to show all items including sorting and search queries """
+    """ A view to show all items, including sorting and search queries """
 
     items = Item.objects.all()
     query = None
+    types = None
 
     if request.GET:
+        if 'type' in request.GET:
+            types = request.GET['type'].split(',')
+            items = items.filter(category__name__in=types)
+            categories = Type.objects.filter(name__in=types)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -24,6 +30,7 @@ def all_items(request):
     context = {
         'items': items,
         'search_term': query,
+        'current_types': types,
     }
 
     return render(request, 'items/items.html', context)
