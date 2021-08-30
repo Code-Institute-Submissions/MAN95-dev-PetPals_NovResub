@@ -56,6 +56,11 @@ html {
 	z-index: -1;
 }
 
+a.type-badge > span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
+}
+
 /* -------------------------------- Footer */
 #footer {
     background-color: #006994;
