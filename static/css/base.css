@@ -94,8 +94,13 @@ footer a:hover {
 
 /* -------------------------------- Styling for home page */
 
-.shipping-font {
+.delivery-font {
     font-size: 14px;
+    margin: 10px;
+}
+
+#delivery-banner {
+    background-color: #F5F5F5;
 }
 
 .home-carousel-item {
