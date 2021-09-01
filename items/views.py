@@ -12,7 +12,7 @@ def all_items(request):
 
     items = Item.objects.all()
     query = None
-    type = None
+    types = Type.objects.all()
     sort = None
     direction = None
 
@@ -31,7 +31,7 @@ def all_items(request):
             items = items.order_by(sortkey)
 
         if 'type' in request.GET:
-            types = request.GET['type'].split(',')
+            types= request.GET['type'].split(',')
             items = items.filter(type__name__in=types)
             types = Type.objects.filter(name__in=types)
 
@@ -49,7 +49,7 @@ def all_items(request):
     context = {
         'items': items,
         'search_term': query,
-        'current_type': type,
+        'current_types': types,
         'current_sorting': current_sorting,
     }
 

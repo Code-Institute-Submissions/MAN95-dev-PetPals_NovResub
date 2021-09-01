@@ -133,6 +133,13 @@ footer a:hover {
     font-size: 50px;
 }
 
+/* -------------------------------- Product page  */
+
+.type-badge {
+    color:  #006994;
+    outline-color:  #006994;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
