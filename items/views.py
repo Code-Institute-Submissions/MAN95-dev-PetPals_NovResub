@@ -32,7 +32,7 @@ def all_items(request):
 
         if 'type' in request.GET:
             types = request.GET['type'].split(',')
-            items = items.filter(category__name__in=types)
+            items = items.filter(type__name__in=types)
             types = Type.objects.filter(name__in=types)
 
         if 'q' in request.GET:
@@ -49,7 +49,7 @@ def all_items(request):
     context = {
         'items': items,
         'search_term': query,
-        'current_category': type,
+        'current_type': type,
         'current_sorting': current_sorting,
     }
 
