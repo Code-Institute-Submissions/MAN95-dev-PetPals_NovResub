@@ -150,6 +150,17 @@ footer a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
   }
 
+/* -------------------------------- Product details page  */
+
+.item-name {
+    font-size: 20px;
+}
+
+.item-price {
+    font-size: 20px;
+    color: #d80000;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
