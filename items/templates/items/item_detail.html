@@ -22,13 +22,6 @@
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-3 font-weight-bold item-name">{{ item.name }}</p>
                     <p class="mb-0 text-left item-price font-weight-bold">${{item.price }}</p>
-                    {% if item.type %}
-                    <p class="small mt-1 mb-0">
-                        <a class="text-muted" href="{% url 'items' %}?type={{ item.type.name }}">
-                            <i class="fas fa-tag mr-1"></i>{{ item.type.friendly_name }}
-                        </a>
-                    </p>
-                    {% endif %}
                     <form class="form" action="{% url 'add_to_cart' item.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
