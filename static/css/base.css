@@ -135,10 +135,20 @@ footer a:hover {
 
 /* -------------------------------- Product page  */
 
-.type-badge {
-    color:  #006994;
-    outline-color:  #006994;
-}
+.btn-blue-outline {
+    border: 1px solid #006994;
+    color: #006994;
+    margin: 0.25rem;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+.btn-blue-outline:hover {
+    background-color: #006994;
+    color: white;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  }
 
 /* -------------------------------- Media Queries */
 
