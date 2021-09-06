@@ -161,6 +161,11 @@ footer a:hover {
     color: #d80000;
 }
 
+.btn-black {
+  border: 1px solid black;
+  color: black;
+}
+
 .btn-yellow {
   background: #FFD700;
   color: black;

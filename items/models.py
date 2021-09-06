@@ -18,8 +18,7 @@ class Item(models.Model):
     description = models.TextField()
     instructions = models.TextField(null=True, blank=True)
     ingredients = models.TextField(null=True, blank=True)
-    questions = models.TextField(null=True, blank=True)
-    has_sizes = models.BooleanField(default=False, null=True, blank=True)
+    questions = models.BooleanField (default=False, null=True, blank=True), models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
 
