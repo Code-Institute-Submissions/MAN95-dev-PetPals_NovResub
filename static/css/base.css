@@ -161,6 +161,20 @@ footer a:hover {
     color: #d80000;
 }
 
+.btn-yellow {
+  background: #FFD700;
+  color: black;
+}
+
+.btn-yellow:hover,
+.btn-yellow:active,
+.btn-yellow:focus {
+    background: #FFD700;
+    color: black;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+
 /* Style the tab */
 .tab {
     overflow: hidden;
