@@ -64,9 +64,13 @@
         <div id="listing-description" class="col-8 offset-lg-2">
             <div class="tab">
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'Description')" id="defaultOpen">Description</button>
+                {% if item.instructions %}
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'Instructions')">Instructions</button>
+                % if item.ingredients %}
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'Ingredients')">Ingredients</button>
+                % if item.questions %}
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'FAQ')">FAQ</button>
+                {% endif %}
             </div>
             
             <!-- Tab content -->
@@ -90,6 +94,7 @@
                 <p>Tokyo is the capital of Japan.</p>
             </div>
         </div>
+        
 {% endblock %}
 {% block postloadjs %}
 {{block.super}}
