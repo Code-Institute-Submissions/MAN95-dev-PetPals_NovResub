@@ -216,6 +216,12 @@ footer a:hover {
     border-top: none;
   }
 
+/* -------------------------------- Cart  */
+  .update-link,
+  .remove-item {
+      cursor: pointer;
+  }
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
