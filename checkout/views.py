@@ -11,6 +11,8 @@ import stripe
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+    # NEXT TWO LINES ADDED BY JO
+    print("STRIPE_SECRET_KEY from settings: ", settings.STRIPE_SECRET_KEY)
 
     cart = request.session.get('cart', {})
     if not cart:
@@ -20,6 +22,9 @@ def checkout(request):
     current_cart = cart_contents(request)
     total = current_cart['grand_total']
     stripe_total = round(total * 100)
+
+    print(stripe_secret_key)
+
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
         amount=stripe_total,
@@ -40,3 +45,4 @@ def checkout(request):
     }
 
     return render(request, template, context)
+
