@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Item, Type
+from .forms import ItemForm
 
 # Create your views here.
 
@@ -66,3 +67,14 @@ def item_detail(request, item_id):
     }
 
     return render(request, 'items/item_detail.html', context)
+
+
+def add_item(request):
+    """ Add an item to the store """
+    form = ItemForm()
+    template = 'items/add_item.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
