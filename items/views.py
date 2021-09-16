@@ -128,10 +128,10 @@ def edit_item(request, item_id):
 @login_required
 def delete_item(request, item_id):
     """ Delete an item from the store """
-     if not request.user.is_superuser:
+    if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     item = get_object_or_404(Item, pk=item_id)
     item.delete()
     messages.success(request, 'Item deleted!')
