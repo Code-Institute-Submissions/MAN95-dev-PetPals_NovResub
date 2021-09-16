@@ -72,9 +72,9 @@
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'Description')" id="defaultOpen">Description</button>
                 {% if item.instructions %}
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'Instructions')">Instructions</button>
-                % if item.ingredients %}
+                {% elif item.ingredients %}
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'Ingredients')">Ingredients</button>
-                % if item.questions %}
+                {% elif item.questions %}
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'FAQ')">FAQ</button>
                 {% endif %}
             </div>
@@ -87,17 +87,17 @@
             
             <div id="Instructions" class="tabcontent">
                 <h3 class="mt-3">Instructions</h3>
-                <p>Paris is the capital of France.</p>
+                <p>{{ item.instructions|safe }}</p>
             </div>
             
             <div id="Ingredients" class="tabcontent">
                 <h3 class="mt-3">Ingredients</h3>
-                <p>Tokyo is the capital of Japan.</p>
+                <p>{{ item.ingredients|safe }}</p>
             </div>
 
             <div id="FAQ" class="tabcontent">
                 <h3 class="mt-3">FAQ</h3>
-                <p>Tokyo is the capital of Japan.</p>
+                <p>{{ item.questions|safe }}</p>
             </div>
         </div>
         
