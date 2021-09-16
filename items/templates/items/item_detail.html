@@ -100,8 +100,10 @@
                 <p>{{ item.questions|safe }}</p>
             </div>
         </div>
+        {% include 'reviews/reviews.html' %}
+        {% endblock %}
         
-{% endblock %}
+
 {% block postloadjs %}
 {{block.super}}
 {% include 'items/includes/quantity_input_script.html' %}
