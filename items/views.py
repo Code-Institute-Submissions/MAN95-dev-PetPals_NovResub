@@ -6,6 +6,9 @@ from django.db.models.functions import Lower
 
 from .models import Item, Type
 from .forms import ItemForm
+from reviews.models import Review
+from reviews.forms import ReviewForm
+from profiles.models import UserProfile
 
 # Create your views here.
 
@@ -62,9 +65,27 @@ def item_detail(request, item_id):
     """ A view to show individual item details """
 
     item = get_object_or_404(Item, pk=item_id)
+    reviews = Review.objects.filter(item=item)
+    review_form = ReviewForm()
 
+    if request.user.is_authenticated:
+        user = UserProfile.objects.get(user=request.user)
+        try:
+            # Check if the user has already left a review
+            item_review = Review.objects.get(user=user, item=item)
+            edit_review_form = ReviewForm(instance=item_review)
+            # If so they will not be able to leave another
+            review_form = None
+        except Review.DoesNotExist:
+            edit_review_form = None
+    else:
+        edit_review_form = None
+  
     context = {
         'item': item,
+        'reviews': reviews,
+        'review_form': review_form,
+        'edit_review_form': edit_review_form,
     }
 
     return render(request, 'items/item_detail.html', context)
@@ -136,3 +157,6 @@ def delete_item(request, item_id):
     item.delete()
     messages.success(request, 'Item deleted!')
     return redirect(reverse('items'))
+
+
+

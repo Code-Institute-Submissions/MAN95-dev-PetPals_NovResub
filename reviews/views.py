@@ -24,8 +24,6 @@ def add_review(request, item_id):
         review.description = request.POST["description"]
         review.save()
 
-        item_reviews = Review.objects.filter(item=item_id).count()
-        
         item.save()
 
         messages.success(request, 'Successfully added review!')
@@ -51,9 +49,6 @@ def edit_review(request, review_id):
     if review_form.is_valid():
         review.save()
 
-        item_reviews = Review.objects.filter(
-                           item=review.item.pk).count()
-
         item.save()
 
         messages.success(request, 'Your review has been successfully edited')
@@ -74,10 +69,6 @@ def delete_review(request, review_id):
 
     try:
         review.delete()
-
-        item_reviews = Review.objects.filter(
-                          item=review.item.pk
-                          ).count()
 
         item.save()
 
