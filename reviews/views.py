@@ -80,4 +80,3 @@ def delete_review(request, review_id):
                        f" error:{e}. Please try again later.")
 
     return redirect(reverse('item_detail', args=(review.item.id,)))
-  

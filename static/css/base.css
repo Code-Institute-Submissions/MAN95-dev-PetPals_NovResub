@@ -43,9 +43,16 @@ html {
 }
 
 .btn-outline-black {
-    background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
+    background: #0093cf;
+    color: white !important; /* use important to override link colors for <a> elements */
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-outline-black:hover {
+  background: #0093cf;
+  color: white !important;
+  opacity: 0.9;
 }
 
 .navbar, #topnav {

@@ -14,6 +14,7 @@ from profiles.models import UserProfile
 
 def all_items(request):
     """ A view to show all items, including sorting and search queries """
+    
 
     items = Item.objects.all()
     query = None
@@ -65,7 +66,8 @@ def item_detail(request, item_id):
     """ A view to show individual item details """
 
     item = get_object_or_404(Item, pk=item_id)
-    reviews = Review.objects.filter(item=item)
+    reviews_raw = Review.objects.filter(item=item)
+    reviews = reviews_raw.order_by('-date_created')
     review_form = ReviewForm()
 
     if request.user.is_authenticated:
