@@ -1,11 +1,10 @@
 {% if reviews.count > 0 %}
     {% for review in reviews %}
         <div id="Reviews" class="tabcontent mb-3">
-            <span class="tab-date">{{ review.date_created }}</span>
             {% if request.user.username == review.user.user.username %}
-            <div class="review-dropdown">
+            <div class="review-dropdown text-right">
                 <a href="#" id="review-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-ellipsis-h fa-2x"></i>
+                    <i class="fas fa-chevron-down"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="review-options">
                     <a href="" data-toggle="modal" data-target="#editReview" class="dropdown-item">Edit</a>
@@ -55,8 +54,8 @@
             </div>                                                                                        
             </div>      
             {% endif %}  
-            <h4 class="tab-bold">{{ review.title }}</h4>
-            <p class="tab-bold">{{ review.user }}</p>
+            <h4 class="mt-3">{{ review.title }}</h4>
+            <p class="user-review"> By {{ review.user }} on {{ review.date_created }}</p>
             <p>{{ review.description }}</p>                    
             <hr>
         </div>

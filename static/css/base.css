@@ -88,13 +88,18 @@ footer ul {
     margin: 0;
   }
   
-footer a {
+.footer-link {
     color: #f8f9fa;
     -webkit-transition: 0.3s all ease-in-out 0.2s;
     transition: 0.3s all ease-in-out 0.2s;
+    text-decoration: none;
+  }
+
+.social-link a:hover {
+    color: #FFD700;
   }
   
-footer a:hover {
+.footer-link a:hover {
     color: white;
     text-decoration: underline;
   }
@@ -221,6 +226,11 @@ footer a:hover {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+  }
+
+  .user-review {
+    font-size: 13px;
+    color: grey;
   }
 
 /* -------------------------------- Cart  */

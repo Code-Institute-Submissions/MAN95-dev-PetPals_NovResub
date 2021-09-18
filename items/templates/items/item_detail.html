@@ -90,16 +90,19 @@
             <div id="Instructions" class="tabcontent mb-3">
                 <h3 class="mt-3">Instructions</h3>
                 <p class="mb-5">{{ item.instructions|safe }}</p>
+                <hr>
             </div>
             
             <div id="Ingredients" class="tabcontent mb-3">
                 <h3 class="mt-3">Ingredients</h3>
                 <p>{{ item.ingredients|safe }}</p>
+                <hr>
             </div>
 
             <div id="FAQ" class="tabcontent mb-3">
                 <h3 class="mt-3">FAQ</h3>
                 <p>{{ item.questions|safe }}</p>
+                <hr>
             </div>
 
             {% include 'reviews/reviews.html' %}
