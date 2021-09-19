@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container header-container">
-        <div class="overlay"></div>
-        <div class="row">
-            <div class="col-6">
-                <div class="allauth-form-inner-content">
+<div class="allauth-hero">
+    <div class="container h-100">
+        <div class="row align-items-center h-100">
+            <div class="col-md-6 col-12 mx-auto">
+                <div class="jumbotron allauth-form-inner-content">
                     {% block inner_content %}
                     {% endblock %}
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

@@ -2,6 +2,12 @@ html {
     height: 100%;
 }
 
+.page-banner{
+  padding: 2rem;
+  background-color: #FFD700;;
+  color: black;
+}
+
 /* -------------------------------- Navbar */
 .logo-font {
     font-family: 'Fredoka One', cursive;
@@ -29,30 +35,12 @@ html {
     width: fit-content;
 }
 
-.btn-blue {
-    background: white;
-    color: #006994;
-}
-
 .text-white {
     color: white !important;
 }
 
 .bg-black {
     background: #000 !important;
-}
-
-.btn-outline-black {
-    background: #0093cf;
-    color: white !important; /* use important to override link colors for <a> elements */
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.btn-outline-black:hover {
-  background: #0093cf;
-  color: white !important;
-  opacity: 0.9;
 }
 
 .navbar, #topnav {
@@ -173,14 +161,27 @@ footer ul {
     color: #d80000;
 }
 
-.btn-black {
-  border: 1px solid black;
-  color: black;
+.btn-blue {
+  background: #00bfff;
+  color: black !important; /* use important to override link colors for <a> elements */
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.btn-blue:hover,
+.btn-blue:active,
+.btn-blue:focus {
+  background: #00bfff;
+  color: black !important;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
 }
 
 .btn-yellow {
   background: #FFD700;
   color: black;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
 .btn-yellow:hover,
@@ -228,11 +229,6 @@ footer ul {
     border-top: none;
   }
 
-  .user-review {
-    font-size: 13px;
-    color: grey;
-  }
-
 /* -------------------------------- Cart  */
   .update-link,
   .remove-item {
@@ -242,6 +238,9 @@ footer ul {
   input[name='q']::placeholder {
       color: #aab7c4;
   }
+
+/* -------------------------------- Checkout  */
+
 
 /* ------------------------------- bootstrap toasts */
 
@@ -320,16 +319,15 @@ footer ul {
   }
 }
 
-/* Allauth form formatting */
-
-.allauth-form-inner-content p {
-  margin-top: 1.5rem; /* mt-4 */
-  color: #6c757d; /* text-secondary */
+.allauth-content{
+  height: 50%;
+  width: 100%;
+  background-color: white;
 }
 
-.allauth-form-inner-content input {
-  border-color: #000;
-  border-radius: 0;
+.allauth-form-inner-content p {
+  margin-top: 1.5rem; 
+  color: #6c757d;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -338,40 +336,21 @@ footer ul {
 
 .allauth-form-inner-content input::placeholder {
   color: #aab7c4;
+  font-size: 1.3rem;
 }
 
-.allauth-form-inner-content button,
-.allauth-form-inner-content input[type='submit'] {
-/* btn */
-display: inline-block;
-  font-weight: 400;
-  color: #fff;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #000;
-  border: 1px solid #000;
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0;
-
-  /* standard bootstrap btn transitions */
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-
-.allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-color: #fff;
-  background-color: #222;
-  border-color: #222;
+.allauth-form-inner-content input {
+  font-size: 1.3rem;
 }
 
 .allauth-form-inner-content a {
-color: #17a2b8; /* text-info */
+  color: #A08F7E;
+  font-size: 1.3rem;
+}
+
+.form-check-label { 
+  margin-left: 1rem;
+  font-size: 1.1rem;
 }
 
 /* Product Form */
@@ -392,14 +371,14 @@ color: #17a2b8; /* text-info */
 }
 
 .custom-checkbox .custom-control-label::before {
-  border-radius: 0;
+  border-radius: 5px;
   border-color: #dc3545;
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
   background-color: #dc3545;
   border-color: #dc3545;
-  border-radius: 0;
+  border-radius: 5px;
 }
 
 /* fixed top navbar only on medium and up */
