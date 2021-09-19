@@ -319,15 +319,16 @@ footer ul {
   }
 }
 
-.allauth-content{
-  height: 50%;
-  width: 100%;
-  background-color: white;
-}
+/* Allauth form formatting */
 
 .allauth-form-inner-content p {
-  margin-top: 1.5rem; 
-  color: #6c757d;
+  margin-top: 1.5rem; /* mt-4 */
+  color: #6c757d; /* text-secondary */
+}
+
+.allauth-form-inner-content input {
+  border-color: #000;
+  border-radius: 0;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -336,21 +337,28 @@ footer ul {
 
 .allauth-form-inner-content input::placeholder {
   color: #aab7c4;
-  font-size: 1.3rem;
 }
 
-.allauth-form-inner-content input {
-  font-size: 1.3rem;
-}
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+/* btn */
+display: inline-block;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 5px;
+
 
 .allauth-form-inner-content a {
-  color: #A08F7E;
-  font-size: 1.3rem;
-}
-
-.form-check-label { 
-  margin-left: 1rem;
-  font-size: 1.1rem;
+color: #17a2b8; /* text-info */
 }
 
 /* Product Form */
