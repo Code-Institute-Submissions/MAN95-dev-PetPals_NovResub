@@ -16,16 +16,4 @@ class ReviewForm(forms.ModelForm):
             'title',
             'description',]
 
-    def __init__(self, *args, **kwargs):
-        """
-        Add placeholders for the review form
-        """
-        super().__init__(*args, **kwargs)
-        placeholders = {
-            'title': 'Title',
-            'description': 'Write your review here...',
-        }
-
-        # Add placeholders and classes to input fields
-        self.fields['title'].widget.attrs['autofocus'] = True
-       
+  
