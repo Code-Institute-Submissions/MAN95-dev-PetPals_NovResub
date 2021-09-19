@@ -72,9 +72,11 @@
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'Description')" id="defaultOpen">Description</button>
                 {% if item.instructions %}
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'Instructions')">Instructions</button>
-                {% elif item.ingredients %}
+                {% endif %}
+                {% if item.ingredients %}
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'Ingredients')">Ingredients</button>
-                {% elif item.questions %}
+                {% endif %}
+                {% if item.questions %}
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'FAQ')">FAQ</button>
                 {% endif %}
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'Reviews')">Reviews</button>
@@ -85,11 +87,12 @@
             <div id="Description" class="tabcontent mb-3">
                 <h3 class="mt-3">Description</h3>
                 <p>{{ item.description|safe }}</p>
+                <hr>
             </div>
             
             <div id="Instructions" class="tabcontent mb-3">
                 <h3 class="mt-3">Instructions</h3>
-                <p class="mb-5">{{ item.instructions|safe }}</p>
+                <p>{{ item.instructions|safe }}</p>
                 <hr>
             </div>
             
