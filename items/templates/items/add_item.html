@@ -2,18 +2,15 @@
 {% load static %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="mb-4">Item Management</h2>
-                <h5 class="text-muted">Add an Item</h5>
-                <hr>
-            </div>
+<div class="overlay"></div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <h2 class="page-banner mt-4 mb-4">Item Management</h2>
         </div>
+    </div>
 
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'add_item' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -25,8 +22,8 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'items' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Add Item</button>
+                        <a class="btn btn-yellow mb-5" href="{% url 'items' %}">Cancel</a>
+                        <button class="btn btn-blue mb-5" type="submit">Add Item</button>
                     </div>
                 </form>
             </div>            
