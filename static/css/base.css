@@ -234,6 +234,12 @@ footer ul {
     color: #ccc;
   }
 
+  #review-options:hover,
+  #review-options:active,
+  #review-options:focus {
+    color: #FFD700;
+  }
+
 /* -------------------------------- Cart  */
   .update-link,
   .remove-item {

@@ -1,64 +1,60 @@
 {% if reviews.count > 0 %}
     {% for review in reviews %}
         <div id="Reviews" class="tabcontent mb-3">
-            {% if request.user.username == review.user.user.username %}
-            <div class="review-dropdown text-right mx-2 my-2">
-                <a href="#" id="review-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-chevron-circle-down fa-2x"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="review-options">
-                    <a href="" data-toggle="modal" data-target="#editReview" class="dropdown-item">Edit</a>
-                    <a href="#" data-toggle="modal" data-target="#deleteReview" class="dropdown-item">Delete</a>
-                </div>    
-            </div>
-            <div class="modal fade" id="editReview" tabindex="-1" role="dialog" aria-labelledby="editReviewLabel" aria-hidden="true">
+            <h4 class="mt-3">{{ review.title }}</h4>
+            <p class="user-review"> By {{ review.user }} on {{ review.date_created }}</p>
+            <p>{{ review.description }}</p>  
+            <hr>
+                {% if request.user.username == review.user.user.username %}
+                <div class="mt-2">
+                    <a href="" data-toggle="modal" data-target="#editReview" class="btn btn-yellow">Edit</a>
+                    <a href="#" data-toggle="modal" data-target="#deleteReview" class="btn btn-blue">Delete</a>
+                    <hr>
+                </div> 
+                <div class="modal fade" id="editReview" tabindex="-1" role="dialog" aria-labelledby="editReviewLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="editReviewLabel">Edit Review</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="{% url 'edit_review' review.pk %}" method="POST">
+                                <div class="modal-body">
+                                    {% csrf_token %}
+                                    {{ edit_review_form|crispy }}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-yellow" data-dismiss="modal" data-target="#editReview">Cancel</button>
+                                    <button type="submit" class="btn btn-blue ml-2">Submit</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="deleteReview" tabindex="-1" role="dialog" aria-labelledby="deleteReviewLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="editReviewLabel">Edit Review</h4>
+                            <h4 class="modal-title" id="deleteReviewLabel">Delete review</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form action="{% url 'edit_review' review.pk %}" method="POST">
-                            <div class="modal-body">
-                                {% csrf_token %}
-                                {{ edit_review_form|crispy }}
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="white-btn" data-dismiss="modal" data-target="#editReview">Cancel</button>
-                                <button type="submit" class="brown-btn ml-2">Submit</button>
+                        <div class="modal-body">
+                            <h5>Are you sure you want to delete your review?</h5>
                         </div>
-                        </form>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-yellow" data-dismiss="modal" data-target="#deleteReview">Cancel</a>
+                            <a class="btn btn-blue ml-2" href="{% url 'delete_review' review.pk %}">Delete</a>
+                        </div>
                     </div>
                 </div>
+                </div>                                                                                        
+                </div>      
+                {% endif %}  
             </div>
-            <div class="modal fade" id="deleteReview" tabindex="-1" role="dialog" aria-labelledby="deleteReviewLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="deleteReviewLabel">Delete review</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <h5>Are you sure you want to delete your review?</h5>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#" class="white-btn" data-dismiss="modal" data-target="#deleteReview">Cancel</a>
-                        <a class="brown-btn ml-2" href="{% url 'delete_review' review.pk %}">Delete</a>
-                    </div>
-                </div>
-            </div>
-            </div>                                                                                        
-            </div>      
-            {% endif %}  
-            <h4 class="mt-3">{{ review.title }}</h4>
-            <p class="user-review"> By {{ review.user }} on {{ review.date_created }}</p>
-            <p>{{ review.description }}</p>                    
-            <hr>
-        </div>
         </div>                    
     {% endfor %}    
 {% else %}    
@@ -74,19 +70,21 @@
         <form class="form mt-3" action="{% url 'add_review' item.pk %}" method="POST">
             {% csrf_token %}
             {{ review_form|crispy }}
-                <button id="submit-review-button" class="btn btn-blue mb-5">
+                <button id="submit-review-button" class="btn btn-blue">
                     Submit
                 </button>                   
         </form>
+        <hr>
     {% elif request.user.is_authenticated and review_form == None %}
-        <p>You have already reviewed this item!</p>              
+        <p class="mt-3">You have already reviewed this item!</p>  
+        <hr>            
     {% else %}  
         <div class="d-flex justify-content-center">
             <p>Please log in or sign up to leave a review</p>
         </div>
         <div class="col-12 d-flex justify-content-center mt-2 mb-5">
-            <a class="btn btn-outline-black font-weight-bold mr-2" href="{% url 'account_login' %}">Log In</a>
-            <a class="btn btn-outline-black font-weight-bold ml-2" href="{% url 'account_signup' %}">Sign Up</a>
+            <a class="btn btn-yellow" href="{% url 'account_login' %}">Log In</a>
+            <a class="btn btn-blue" href="{% url 'account_signup' %}">Sign Up</a>
             <hr>
         </div>                 
     {% endif %}
