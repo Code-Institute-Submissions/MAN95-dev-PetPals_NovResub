@@ -2,9 +2,9 @@
     {% for review in reviews %}
         <div id="Reviews" class="tabcontent mb-3">
             {% if request.user.username == review.user.user.username %}
-            <div class="review-dropdown text-right">
+            <div class="review-dropdown text-right mx-2 my-2">
                 <a href="#" id="review-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-circle-down fa-2x"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="review-options">
                     <a href="" data-toggle="modal" data-target="#editReview" class="dropdown-item">Edit</a>

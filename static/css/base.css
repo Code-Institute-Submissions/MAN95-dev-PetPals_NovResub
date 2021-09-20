@@ -229,6 +229,11 @@ footer ul {
     border-top: none;
   }
 
+   /* Style the review dropdown button */
+  #review-options {
+    color: #ccc;
+  }
+
 /* -------------------------------- Cart  */
   .update-link,
   .remove-item {
