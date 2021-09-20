@@ -81,8 +81,8 @@ footer ul {
     margin: 0;
   }
   
-.footer-item {
-    color: #f8f9fa;
+.footer-item a {
+    color: white;
     -webkit-transition: 0.3s all ease-in-out 0.2s;
     transition: 0.3s all ease-in-out 0.2s;
     text-decoration: none;
@@ -197,6 +197,12 @@ footer ul {
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
 }
+
+.btn-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+  }
 
 /* Style the tab */
 .tab {

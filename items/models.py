@@ -27,16 +27,3 @@ class Item(models.Model):
     def __str__(self):
         return self.name
 
-    def apply_discount(self):
-        """
-        Update grand total each time a line item is added,
-        accounting for delivery costs.
-        """
-        self.onsale_price = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        if self.onsale_price:
-            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
-        else:
-            self.price
-        self.grand_total = self.order_total + self.delivery_cost
-        self.save()
-
