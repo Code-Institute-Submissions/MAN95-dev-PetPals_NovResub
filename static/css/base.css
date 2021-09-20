@@ -63,8 +63,16 @@ a.type-badge > span.badge:hover {
 }
 
 .navbar-nav > li{
-  padding-left:30px;
-  padding-right:30px;
+  padding-left:25px;
+  padding-right:25px;
+}
+
+.navbar-toggler-icon {
+  color: white;
+}
+
+.toggler-icon {
+  border: none;
 }
 
 /* -------------------------------- Footer */
@@ -424,4 +432,11 @@ color: #17a2b8; /* text-info */
     .header-container {
         padding-top: 164px;
     }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+
+
+
 }
