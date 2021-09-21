@@ -101,9 +101,13 @@ footer ul {
     text-decoration: underline;
   }
 
-.social-link a:hover {
-    color: #FFD700;
-  }
+.footer-link {
+  display: inline-block;
+}
+
+#footer h2.logo-font {
+  font-size: 30px;
+}
 
 /* -------------------------------- Styling for home page */
 
@@ -420,8 +424,8 @@ display: inline-block;
   border-radius: 5px;
 }
 
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
+/** Medium devices only **/
+@media (min-width: 992px) and (max-width: 1199px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -433,11 +437,10 @@ display: inline-block;
     .header-container {
         padding-top: 164px;
     }
-
 }
 
-@media (min-width: 768px) {
-  #footer-width {
-    width: 100%;
-}
+/** Extra small devices only **/
+@media (max-width: 767px) {
+
+
 }

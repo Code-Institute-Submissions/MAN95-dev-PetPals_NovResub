@@ -1,96 +1,150 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item dropdown">
-            <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="dogs-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dogs
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="dogs-link">
-                <a href="{% url 'items' %}?type=dog_food" class="dropdown-item">Dog Food</a>
-                <a href="{% url 'items' %}?type=dog_treats" class="dropdown-item ">Dog Treats</a>
-                <a href="{% url 'items' %}?type=dog_toys" class="dropdown-item ">Dog Toys</a>
-                <a href="{% url 'items' %}?type=dog_beds" class="dropdown-item">Dog Beds</a>
-                <a href="{% url 'items' %}?type=dog_flea_and_tick" class="dropdown-item">Dog Flea and Tick</a>
-                <a href="{% url 'items' %}?type=dog_food,dog_treats,dog_toys,dog_beds,dog_flea_and_tick" class="dropdown-item">All Dog Items</a>
+        <li class="nav-item">
+          <a class="text-white nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div>
+                  <div><i class="fas fa-search fa-lg"></i></div>
+                  <p class="my-0 d-none d-sm-block">Search</p>
+              </div>
+          </a>
+          <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+              <form class="form" method="GET" action="{% url 'items' %}">
+                  <div class="input-group w-100">
+                      <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                      <div class="input-group-append">
+                          <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
+                              <span class="icon">
+                                  <i class="fas fa-search"></i>
+                              </span>
+                          </button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="text-white nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div>
+                  <div><i class="fas fa-user fa-lg"></i></div>
+                  <p class="my-0 d-none d-sm-block">My Account</p>
+              </div>
+          </a>
+          <div class="dropdown-menu border-0" aria-labelledby="user-options">
+              {% if request.user.is_authenticated %}
+                  {% if request.user.is_superuser %}
+                      <a href="{% url 'add_item' %}" class="dropdown-item">Item Management</a>
+                  {% endif %}
+                  <a href="% url 'profile' %}" class="dropdown-item">My Profile</a>
+                  <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+              {% else %}
+                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+              {% endif %}
+          </div>
+      </li>
+      <li class="nav-item">
+        <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none" href="{% url 'view_cart' %}">
+            <div>
+                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                <p class="my-0 d-none d-sm-block">
+                    {% if grand_total %}
+                        ${{ grand_total|floatformat:2 }}
+                    {% else %}
+                        $0.00
+                    {% endif %}
+                </p>
             </div>
-        </li>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="dogs-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dogs
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="dogs-link">
+            <a href="{% url 'items' %}?type=dog_food" class="dropdown-item">Dog Food</a>
+            <a href="{% url 'items' %}?type=dog_treats" class="dropdown-item ">Dog Treats</a>
+            <a href="{% url 'items' %}?type=dog_toys" class="dropdown-item ">Dog Toys</a>
+            <a href="{% url 'items' %}?type=dog_beds" class="dropdown-item">Dog Beds</a>
+            <a href="{% url 'items' %}?type=dog_flea_and_tick" class="dropdown-item">Dog Flea and Tick</a>
+            <a href="{% url 'items' %}?type=dog_food,dog_treats,dog_toys,dog_beds,dog_flea_and_tick" class="dropdown-item">All Dog Items</a>
+        </div>
+    </li>
 
-        <li class="nav-item dropdown">
-            <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="cats-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Cats
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="cats-link">
-                <a href="{% url 'items' %}?type=cat_food" class="dropdown-item">Cat Food</a>
-                <a href="{% url 'items' %}?type=cat_furniture" class="dropdown-item ">Cat Furniture</a>
-                <a href="{% url 'items' %}?type=cat_beds" class="dropdown-item ">Cat Beds</a>
-                <a href="{% url 'items' %}?type=litter" class="dropdown-item">Litter</a>
-                <a href="{% url 'items' %}?type=cat_flea_and_tick" class="dropdown-item">Cat Flea and Tick</a>
-                <a href="{% url 'items' %}?type=cat_food,cat_furniture,cat_beds,litter,cat_flea_and_tick" class="dropdown-item">All Cat Items</a>
-            </div>
-        </li>
+    <li class="nav-item dropdown">
+        <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="cats-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cats
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="cats-link">
+            <a href="{% url 'items' %}?type=cat_food" class="dropdown-item">Cat Food</a>
+            <a href="{% url 'items' %}?type=cat_furniture" class="dropdown-item ">Cat Furniture</a>
+            <a href="{% url 'items' %}?type=cat_beds" class="dropdown-item ">Cat Beds</a>
+            <a href="{% url 'items' %}?type=litter" class="dropdown-item">Litter</a>
+            <a href="{% url 'items' %}?type=cat_flea_and_tick" class="dropdown-item">Cat Flea and Tick</a>
+            <a href="{% url 'items' %}?type=cat_food,cat_furniture,cat_beds,litter,cat_flea_and_tick" class="dropdown-item">All Cat Items</a>
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="smallpets-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Small Pets
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="smallpets-link">
+            <a href="{% url 'items' %}?type=food_and_treats" class="dropdown-item">Food and Treats</a>
+            <a href="{% url 'items' %}?type=cages_and_habitats" class="dropdown-item">Cages and Habitats</a>
+            <a href="{% url 'items' %}?type=beds_and_hideaways"class="dropdown-item">Beds and Hideaways</a>
+            <a href="{% url 'items' %}?type=bedding_and_litter" class="dropdown-item">Bedding and Litter</a>
+            <a href="{% url 'items' %}?type=toys_and_habitat_accessories" class="dropdown-item">Toys and Habit Accessories</a>
+            <a href="{% url 'items' %}?type=food_and_treats,cages_and_habitats,beds_and_hideaways,bedding_and_litter,toys_and_habitat_accessories" class="dropdown-item">All Small Pet Items</a>
+        </div>
+    </li>
 
-        <li class="nav-item dropdown">
-            <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="smallpets-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Small Pets
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="smallpets-link">
-                <a href="{% url 'items' %}?type=food_and_treats" class="dropdown-item">Food and Treats</a>
-                <a href="{% url 'items' %}?type=cages_and_habitats" class="dropdown-item">Cages and Habitats</a>
-                <a href="{% url 'items' %}?type=beds_and_hideaways"class="dropdown-item">Beds and Hideaways</a>
-                <a href="{% url 'items' %}?type=bedding_and_litter" class="dropdown-item">Bedding and Litter</a>
-                <a href="{% url 'items' %}?type=toys_and_habitat_accessories" class="dropdown-item">Toys and Habit Accessories</a>
-                <a href="{% url 'items' %}?type=food_and_treats,cages_and_habitats,beds_and_hideaways,bedding_and_litter,toys_and_habitat_accessories" class="dropdown-item">All Small Pet Items</a>
-            </div>
-        </li>
+    <li class="nav-item dropdown">
+        <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="birds-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Birds
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="birds-link">
+            <a href="{% url 'items' %}?type=bird_cages" class="dropdown-item">Bird Cages</a>
+            <a href="{% url 'items' %}?type=bird_food" class="dropdown-item">Bird Food</a>
+            <a href="{% url 'items' %}?type=bird_toys" class="dropdown-item">Bird Toys</a>
+            <a href="{% url 'items' %}?type=perches_and_playstands" class="dropdown-item">Perches and Playstands</a>
+            <a href="{% url 'items' %}?type=bird_treats" class="dropdown-item">Bird Treats</a>
+            <a href="{% url 'items' %}?type=bird_cages,bird_food,bird_toys,perches_and_playstands,bird_treats" class="dropdown-item">All Bird Items</a>
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="fish-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Fish
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="fish-link">
+            <a href="{% url 'items' %}?type=aquariums" class="dropdown-item">Aquariums</a>
+            <a href="{% url 'items' %}?type=filters" class="dropdown-item">Filters</a>
+            <a href="{% url 'items' %}?type=sand_and_gravel" class="dropdown-item">Sand and Gravel</a>
+            <a href="{% url 'items' %}?type=water_care"class="dropdown-item">Water Care</a>
+            <a href="{% url 'items' %}?type=fish_food"class="dropdown-item">Fish Food</a>
+            <a href="{% url 'items' %}?type=aquariums,filters,sand_and_gravel,water_care,fish_food" class="dropdown-item">All Fish Items</a>
+        </div>
+    </li>
 
-        <li class="nav-item dropdown">
-            <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="birds-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Birds
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="birds-link">
-                <a href="{% url 'items' %}?type=bird_cages" class="dropdown-item">Bird Cages</a>
-                <a href="{% url 'items' %}?type=bird_food" class="dropdown-item">Bird Food</a>
-                <a href="{% url 'items' %}?type=bird_toys" class="dropdown-item">Bird Toys</a>
-                <a href="{% url 'items' %}?type=perches_and_playstands" class="dropdown-item">Perches and Playstands</a>
-                <a href="{% url 'items' %}?type=bird_treats" class="dropdown-item">Bird Treats</a>
-                <a href="{% url 'items' %}?type=bird_cages,bird_food,bird_toys,perches_and_playstands,bird_treats" class="dropdown-item">All Bird Items</a>
-            </div>
-        </li>
+    <li class="nav-item dropdown">
+        <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="reptiles-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Reptiles
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="reptiles-link">
+            <a href="{% url 'items' %}?type=terrariums_and_tanks" class="dropdown-item">Terrariums and Tanks</a>
+            <a href="{% url 'items' %}?type=reptile_food" class="dropdown-item">Reptile Food</a>
+            <a href="{% url 'items' %}?type=reptile_decor_and_hideaways" class="dropdown-item">Reptile Decor and Hideaways</a>
+            <a href="{% url 'items' %}?type=reptile_substrate_and_bedding" class="dropdown-item">Reptile Substrate and Bedding</a>
+            <a href="{% url 'items' %}?type=reptile_cleanup_and_odor_control" class="dropdown-item">Reptile Cleanup and Odor Control</a>
+            <a href="{% url 'items' %}?type=terrariums_and_tanks,reptile_food,reptile_decor_and_hideaways,reptile_substrate_and_bedding,reptile_cleanup_and_odor_control" class="dropdown-item">All Reptile Items</a>
+        </div>
+    </li>
 
-        <li class="nav-item dropdown">
-            <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="fish-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Fish
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="fish-link">
-                <a href="{% url 'items' %}?type=aquariums" class="dropdown-item">Aquariums</a>
-                <a href="{% url 'items' %}?type=filters" class="dropdown-item">Filters</a>
-                <a href="{% url 'items' %}?type=sand_and_gravel" class="dropdown-item">Sand and Gravel</a>
-                <a href="{% url 'items' %}?type=water_care"class="dropdown-item">Water Care</a>
-                <a href="{% url 'items' %}?type=fish_food"class="dropdown-item">Fish Food</a>
-                <a href="{% url 'items' %}?type=aquariums,filters,sand_and_gravel,water_care,fish_food" class="dropdown-item">All Fish Items</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="reptiles-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Reptiles
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="reptiles-link">
-                <a href="{% url 'items' %}?type=terrariums_and_tanks" class="dropdown-item">Terrariums and Tanks</a>
-                <a href="{% url 'items' %}?type=reptile_food" class="dropdown-item">Reptile Food</a>
-                <a href="{% url 'items' %}?type=reptile_decor_and_hideaways" class="dropdown-item">Reptile Decor and Hideaways</a>
-                <a href="{% url 'items' %}?type=reptile_substrate_and_bedding" class="dropdown-item">Reptile Substrate and Bedding</a>
-                <a href="{% url 'items' %}?type=reptile_cleanup_and_odor_control" class="dropdown-item">Reptile Cleanup and Odor Control</a>
-                <a href="{% url 'items' %}?type=terrariums_and_tanks,reptile_food,reptile_decor_and_hideaways,reptile_substrate_and_bedding,reptile_cleanup_and_odor_control" class="dropdown-item">All Reptile Items</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="onsale-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                On Sale
-            </a>
-            <div aria-labelledby="onsale-link">
-                <a href=""></a>
-            </div>
-        </li>
-    </ul>
+    <li class="nav-item dropdown">
+        <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="onsale-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            On Sale
+        </a>
+        <div aria-labelledby="onsale-link">
+            <a href=""></a>
+        </div>
+    </li>
+</ul>
 </div>
