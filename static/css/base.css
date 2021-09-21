@@ -432,11 +432,11 @@ display: inline-block;
     .header-container {
         padding-top: 164px;
     }
+
 }
 
-/* pad the top a bit when navbar is collapsed on mobile */
-@media (max-width: 991px) {
-
-
-
+@media (min-width: 768px) {
+  #footer-width {
+    width: 100%;
+}
 }
