@@ -8,10 +8,13 @@ function openContent(evt, contentName) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-  document.getElementById(contentName).style.display = "block";
-  evt.currentTarget.className += " active";
+  if (document.getElementById(contentName)) {
+      const element = document.getElementById(contentName).style.display = "block";
+      evt.currentTarget.className += " active";
+}
 }
 
 // Get the element with id="defaultOpen" and click on it
-const element = document.getElementById("defaultOpen").click();
-
+if (document.getElementById("openDefault")) {
+  ﻿ const element = document.getElementById("defaultOpen").click();
+  ﻿}
