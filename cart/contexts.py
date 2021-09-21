@@ -9,10 +9,12 @@ def cart_contents(request):
     total = 0
     item_count = 0
     cart = request.session.get('cart', {})
-
     for item_id, quantity in cart.items():
         item = get_object_or_404(Item, pk=item_id)
-        total += quantity * item.price
+        if item.onsale:
+            total += item.onsale_price * quantity
+        else:
+            total += item.price * quantity
         item_count += quantity
         cart_items.append({
             'item_id': item_id,
