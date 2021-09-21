@@ -42,7 +42,7 @@
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                         <div class="col-3 text-right">
-                            {% if item.onsale %}
+                            {% if item.item.onsale %}
                                 <p class="my-0 small text-muted">${{ item.item.onsale_price | calc_subtotal:item.quantity }}</p>
                             {% else %}
                                 <p class="my-0 small text-muted">${{ item.item.price | calc_subtotal:item.quantity }}</p>
