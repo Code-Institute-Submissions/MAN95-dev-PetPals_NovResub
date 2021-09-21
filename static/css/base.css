@@ -63,8 +63,8 @@ a.type-badge > span.badge:hover {
 }
 
 .navbar-nav > li{
-  padding-left:25px;
-  padding-right:25px;
+  padding-left:20px;
+  padding-right:20px;
 }
 
 .navbar-toggler-icon {
@@ -89,6 +89,18 @@ footer ul {
     margin: 0;
   }
   
+.footer-item {
+    color: white;
+    -webkit-transition: 0.3s all ease-in-out 0.2s;
+    transition: 0.3s all ease-in-out 0.2s;
+    text-decoration: none;
+  }
+  
+.footer-item:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
 .footer-item a {
     color: white;
     -webkit-transition: 0.3s all ease-in-out 0.2s;
