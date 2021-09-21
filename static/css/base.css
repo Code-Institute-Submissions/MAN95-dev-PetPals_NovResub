@@ -191,6 +191,11 @@ footer ul {
     color: #d80000;
 }
 
+.item-sale-price {
+    font-size: 22px;
+    color: #00bfff;
+}
+
 .btn-blue {
   background: #00bfff;
   color: black !important; /* use important to override link colors for <a> elements */
