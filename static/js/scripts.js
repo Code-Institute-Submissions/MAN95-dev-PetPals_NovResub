@@ -1,3 +1,6 @@
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
 function openContent(evt, contentName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -12,5 +15,3 @@ function openContent(evt, contentName) {
   evt.currentTarget.className += " active";
 }
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
