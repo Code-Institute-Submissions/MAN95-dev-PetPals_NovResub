@@ -138,10 +138,19 @@
         </div>
     </li>
 
-    <li class="nav-item">
-        <a class="navbar-font font-weight-bold nav-link text-white" href="{% url 'items' %}?type=on_sale" id="onsale-link"  aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item dropdown">
+        <a class="navbar-font font-weight-bold nav-link text-white" href="#" id="onsale-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             On Sale
         </a>
+        <div class="dropdown-menu border-0" aria-labelledby="onsale-link">
+            <a href="{% url 'items' %}?type=dog_items_on_sale" class="dropdown-item">Dog Items On Sale</a>
+            <a href="{% url 'items' %}?type=cat_items_on_sale" class="dropdown-item">Cat Items On Sale</a>
+            <a href="{% url 'items' %}?type=small_pet_items_on_sale" class="dropdown-item">Small Pet Items On Sale</a>
+            <a href="{% url 'items' %}?type=bird_items_on_sale" class="dropdown-item">Bird Items On Sale</a>
+            <a href="{% url 'items' %}?type=fish_items_on_sale" class="dropdown-item">Fish Items On Sale</a>
+            <a href="{% url 'items' %}?type=reptile_items_on_sale" class="dropdown-item">Reptile Items On Sale</a>
+            <a href="{% url 'items' %}?type=dog_items_on_sale,cat_items_on_sale,small_pet_items_on_sale,bird_items_on_sale,fish_items_on_sale,reptile_items_on_sale" class="dropdown-item">All Items On Sale</a>
+        </div>
     </li>
 </ul>
 </div>
