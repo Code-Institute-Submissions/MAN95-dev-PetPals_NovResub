@@ -175,6 +175,12 @@ footer ul {
   transform: scale(1);
 }
 
+.sale-banner{
+  padding: 2rem;
+  background-color: #d80000;
+  color: white;
+}
+
 /* -------------------------------- Product page  */
 
 .btn-blue-outline {
