@@ -6,6 +6,7 @@
 
 {% block content %}
 <!-- Home page carousel -->
+<section>
 <div id="home-page-carousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#home-page-carousel" data-slide-to="0" class="active"></li>
@@ -30,10 +31,108 @@
         </div>
     </div>
 </div>
+</section>
+
+<section id="index-staples-section">
+    <div class="container index-staples">
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="index-header logo-font mt-5 mb-3" id="index-staples-header"><span>On Sale</span></h1>
+            </div>
+        </div>
+        <div class="row index-staples-items">
+            <div class="col-md-3">
+                <a class="white-underline" href="{% url 'item_detail' 43 %}">
+                    <div class="index-staples-image mx-auto mt-4">
+                        <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_2.38.57_PM.png" alt="twelve month planner">
+                    </div>   
+                </a>
+                <p class="mt-3">Petcurean Go! Fit + Free Cat Food - Chicken Turkey + Duck (4 lb)</p>
+                <p class="item-price font-weight-bold mb-0"><s>Was $500</s></p>
+                <p class="item-sale-price font-weight-bold mb-0">Now is $400</p>
+            </div>
+            <div class="col-md-3">
+                <a class="white-underline" href="{% url 'item_detail' 43 %}">
+                    <div class="index-staples-image mx-auto mt-4">
+                        <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_2.38.57_PM.png" alt="twelve month planner">
+                    </div>   
+                </a>
+                <p class="mt-3">Petcurean Go! Fit + Free Cat Food - Chicken Turkey + Duck (4 lb)</p>
+                <p class="item-price font-weight-bold mb-0"><s>Was $500</s></p>
+                <p class="item-sale-price font-weight-bold mb-0">Now is $400</p>
+            </div>
+            <div class="col-md-3">
+                <a class="white-underline" href="{% url 'item_detail' 43 %}">
+                    <div class="index-staples-image mx-auto mt-4">
+                        <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_2.38.57_PM.png" alt="twelve month planner">
+                    </div>   
+                </a>
+                <p class="mt-3">Petcurean Go! Fit + Free Cat Food - Chicken Turkey + Duck (4 lb)</p>
+                <p class="item-price font-weight-bold mb-0"><s>Was $500</s></p>
+                <p class="item-sale-price font-weight-bold mb-0">Now is $400</p>
+            </div>
+            <div class="col-md-3">
+                <a class="white-underline" href="{% url 'item_detail' 43 %}">
+                    <div class="index-staples-image mx-auto mt-4">
+                        <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_2.38.57_PM.png" alt="twelve month planner">
+                    </div>   
+                </a>
+                <p class="mt-3">Petcurean Go! Fit + Free Cat Food - Chicken Turkey + Duck (4 lb)</p>
+                <p class="item-price font-weight-bold mb-0"><s>Was $500</s></p>
+                <p class="item-sale-price font-weight-bold mb-0">Now is $400</p>
+            </div>
+            <div class="col-md-3">
+                <a class="white-underline" href="{% url 'item_detail' 43 %}">
+                    <div class="index-staples-image mx-auto mt-4">
+                        <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_2.38.57_PM.png" alt="twelve month planner">
+                    </div>   
+                </a>
+                <p class="mt-3">Petcurean Go! Fit + Free Cat Food - Chicken Turkey + Duck (4 lb)</p>
+                <p class="item-price font-weight-bold mb-0"><s>Was $500</s></p>
+                <p class="item-sale-price font-weight-bold mb-0">Now is $400</p>
+            </div>
+            <div class="col-md-3">
+                <a class="white-underline" href="{% url 'item_detail' 43 %}">
+                    <div class="index-staples-image mx-auto mt-4">
+                        <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_2.38.57_PM.png" alt="twelve month planner">
+                    </div>   
+                </a>
+                <p class="mt-3">Petcurean Go! Fit + Free Cat Food - Chicken Turkey + Duck (4 lb)</p>
+                <p class="item-price font-weight-bold mb-0"><s>Was $500</s></p>
+                <p class="item-sale-price font-weight-bold mb-0">Now is $400</p>
+            </div>
+            <div class="col-md-3">
+                <a class="white-underline" href="{% url 'item_detail' 43 %}">
+                    <div class="index-staples-image mx-auto mt-4">
+                        <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_2.38.57_PM.png" alt="twelve month planner">
+                    </div>   
+                </a>
+                <p class="mt-3">Petcurean Go! Fit + Free Cat Food - Chicken Turkey + Duck (4 lb)</p>
+                <p class="item-price font-weight-bold mb-0"><s>Was $500</s></p>
+                <p class="item-sale-price font-weight-bold mb-0">Now is $400</p>
+            </div>
+            <div class="col-md-3">
+                <a class="white-underline" href="{% url 'item_detail' 43 %}">
+                    <div class="index-staples-image mx-auto mt-4">
+                        <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_2.38.57_PM.png" alt="twelve month planner">
+                    </div>   
+                </a>
+                <p class="mt-3">Petcurean Go! Fit + Free Cat Food - Chicken Turkey + Duck (4 lb)</p>
+                <p class="item-price font-weight-bold mb-0"><s>Was $500</s></p>
+                <p class="item-sale-price font-weight-bold mb-0">Now is $400</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="justify-content-center">
+                <a class="btn btn-yellow mt-5" id="index-staples-button" href="">See All On Sale</a>
+            </div>
+        </div>
+</section>
 
 <!-- Home page shop by pet -->
-    <div>
-        <h3 class="text-center shop-by-pet pt-5">Shop by pet</h3>
+<section>
+    <div class="row">
+        <h3 class="logo-font text-center pt-5">Shop by pet</h3>
     </div>
     <div class="row">
         <div class="col-md-2 p-5">
@@ -55,4 +154,5 @@
             <button class="home-button"><i class="fas fa-dragon fa-2x"></i></button>
         </div>        
     </div>
+</section>
 {% endblock %}

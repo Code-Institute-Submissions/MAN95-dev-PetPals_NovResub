@@ -163,6 +163,18 @@ footer ul {
     font-size: 50px;
 }
 
+.index-staples-image{
+  overflow: hidden;
+  width: 80%;
+}
+
+.index-staples-image img{
+  transition: all 0.3s;
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+}
+
 /* -------------------------------- Product page  */
 
 .btn-blue-outline {
