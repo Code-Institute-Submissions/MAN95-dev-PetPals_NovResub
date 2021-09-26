@@ -15,6 +15,6 @@ function openContent(evt, contentName) {
 }
 
 // Get the element with id="defaultOpen" and click on it
-if (document.getElementById("openDefault")) {
+if (document.getElementById("defaultOpen")) {
   ﻿ const element = document.getElementById("defaultOpen").click();
   ﻿}
