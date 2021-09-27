@@ -136,25 +136,60 @@
     </div>
     <div class="row">
         <div class="col-md-2 p-5">
-        <button class="home-button" href="{% url 'items' %}?type=dog_food,dog_treats,dog_toys,dog_beds,dog_flea_and_tick">
-            <span class="icon"><i class="fas fa-dog fa-2x"></i></span>
-        </button>
+        <a href="{% url 'items' %}?type=dog_food,dog_treats,dog_toys,dog_beds,dog_flea_and_tick" 
+            class="btn home-button">
+            <span class="target showhim">
+                <i class="fas fa-dog fa-2x"></i>
+                <span class="showme">Dogs</span>
+            </span>
+            
+        </a>
         </div>
         <div class="col-md-2 p-5">
-            <button class="home-button"><i class="fas fa-cat fa-2x"></i></button>
+            <a href="{% url 'items' %}?type=cat_food,cat_furniture,cat_beds,litter,cat_flea_and_tick"
+                class="btn home-button">
+                <span class="target showhim">
+                    <i class="fas fa-cat fa-2x"></i>
+                    <span class="showme">Cats</span>
+                </span>
+            </a>
         </div>
         <div class="col-md-2 p-5">
-           <button class="home-button"><i class="fas fa-otter fa-2x"></i></button>
+            <a href="{% url 'items' %}?type=food_and_treats,cages_and_habitats,beds_and_hideaways,bedding_and_litter,toys_and_habitat_accessories"
+                class="btn home-button">
+                <span class="target showhim">
+                    <i class="fas fa-otter fa-2x"></i>
+                    <span class="showme">Small Pets</span>
+                </span>
+            </a>
         </div>
         <div class="col-md-2 p-5">
-            <button class="home-button"><i class="fas fa-dove fa-2x"></i></button>
+            <a href="{% url 'items' %}?type=bird_cages,bird_food,bird_toys,perches_and_playstands,bird_treats"
+                class="btn home-button">
+                <span class="target showhim">
+                    <i class="fas fa-dove fa-2x"></i>
+                    <span class="showme">Birds</span>
+                </span>
+            </a>
         </div>
         <div class="col-md-2 p-5">
-            <button class="home-button"><i class="fas fa-fish fa-2x"></i></button>
+            <a href="{% url 'items' %}?type=aquariums,filters,sand_and_gravel,water_care,fish_food"
+                class="btn home-button">
+                <span class="target showhim">
+                    <i class="fas fa-fish fa-2x"></i>
+                    <span class="showme">Fish</span>
+                </span>
+            </a>
         </div>
         <div class="col-md-2 p-5">
-            <button class="home-button"><i class="fas fa-dragon fa-2x"></i></button>
-        </div>        
+            <a href="{% url 'items' %}?type=terrariums_and_tanks,reptile_food,reptile_decor_and_hideaways,reptile_substrate_and_bedding,reptile_cleanup_and_odor_control"
+                class="btn home-button">
+                <span class="target showhim">
+                    <i class="fas fa-dragon fa-2x"></i>
+                    <span class="showme">Reptiles</span>
+                </span>
+            </a>
+        </div>   
     </div>
 </section>
 {% endblock %}
