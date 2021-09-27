@@ -131,11 +131,6 @@ footer ul {
 #delivery-banner {
     background-color: #f1f1f1;
 }
-
-.home-carousel-item {
-    height: 66vh;
-    width: 100vw;
-  }
   
 .carousel-image {
     height: 100%;
@@ -156,6 +151,7 @@ footer ul {
     background-color: #FFD700;
     font-family: 'Fredoka One', cursive;
     font-size: 25px;
+    align-content: center;
 }
 
 .btn.home-button:hover {
@@ -304,7 +300,7 @@ footer ul {
   
   /* Style the tab content */
   .descriptioncontent {
-    display: none;
+    display: inline;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
@@ -409,6 +405,11 @@ footer ul {
   .container {
     max-width: 80%;
   }
+
+  .home-carousel-item {
+    height: 66vh;
+    width: 100vw;
+  }
 }
 
 /* Allauth form formatting */
@@ -495,33 +496,19 @@ display: inline-block;
   }
 }
 
-
 @media (max-width: 991px) {
   .header-container {
       padding-top: 116px;
   }
 
-  body {
-      height: calc(100vh - 116px);
+  .sale-banner{
+    padding: 1rem;
+    background-color: #d80000;
+    color: white;
   }
 
-  .display-4.logo-font.text-white {
-      font-size: 2rem;
-  }
-
-  .navbar-toggler {
-      padding: .6rem .6rem;
-      font-size: 1rem;
-  }
-
-  .btn.btn-yellow,
-  .btn.btn-blue,
-  .btn.btn-black.rounded-1 {
-      padding: .375rem .375rem;
-      font-size: .75rem;
-  }
-
-  .increment-qty, .decrement-qty {
-      padding: .25rem .5rem !important;
+  .home-button-animal {
+    padding-right: 40px; 
   }
 }
+

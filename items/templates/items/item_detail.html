@@ -73,20 +73,20 @@
         </div>
 
         <!-- Tab links -->
-        <div id="listing-description" class="col-8 offset-lg-2">
+        <div id="listing-description" class="col-md-8 offset-lg-2">
             <div class="tab">
                 <button class="tablinks font-weight-bold" onclick="openContent(event, 'Description')" id="defaultOpen">Description</button>
                 {% if item.instructions %}
-                <button class="tablinks font-weight-bold" onclick="openContent(event, 'Instructions')">Instructions</button>
+                <button class="tablinks font-weight-bold d-flex" onclick="openContent(event, 'Instructions')">Instructions</button>
                 {% endif %}
                 {% if item.ingredients %}
-                <button class="tablinks font-weight-bold" onclick="openContent(event, 'Ingredients')">Ingredients</button>
+                <button class="tablinks font-weight-bold d-flex" onclick="openContent(event, 'Ingredients')">Ingredients</button>
                 {% endif %}
                 {% if item.questions %}
-                <button class="tablinks font-weight-bold" onclick="openContent(event, 'FAQ')">FAQ</button>
+                <button class="tablinks font-weight-bold d-flex" onclick="openContent(event, 'FAQ')">FAQ</button>
                 {% endif %}
-                <button class="tablinks font-weight-bold" onclick="openContent(event, 'Reviews')">Reviews</button>
-                <button class="tablinks font-weight-bold" onclick="openContent(event, 'Write_a_review')">Write a review</button>
+                <button class="tablinks font-weight-bold d-flex" onclick="openContent(event, 'Reviews')">Reviews</button>
+                <button class="tablinks font-weight-bold d-flex" onclick="openContent(event, 'Write_a_review')">Write a review</button>
             </div>
             
             <!-- Tab content -->
