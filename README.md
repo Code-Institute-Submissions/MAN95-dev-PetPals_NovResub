@@ -1,104 +1,160 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+PetPals is an e-commerce site, built using HTML, CSS, JavaScript, Python, and Django. The shop sells a range of pet food and accessories.
 
-Welcome MAN95-dev,
+DISCLAIMER: This website is for educational purposes only and uses products and content from existing brands. Please see the credits section for full information.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+The live project can be viewed here.
 
-## Gitpod Reminders
+Test card details:
+* Card Number: 4242 4242 4242 4242
+* Expiration Date: 04 / 24
+* CVC: 424
+* ZIP: 42424
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Table of Contents
 
-`python3 -m http.server`
+1. [Project Summary](#project-summary)
+	- [Site Purpose](#site-purpose)
 
-A blue button should appear to click: _Make Public_,
+2. [UX](#ux)
+    - [Goals](#goals)
+        - [Site Owner Goals](#site-owner-goals)
+        - [Site User Goals](#site-user-goals)
+    - [User Stories](#user-stories)
+    - [Design Choices](#design-choices)
+    - [Wireframes](#wireframes)
 
-Another blue button should appear to click: _Open Browser_.
+3. [Features](#features)
+    - [Existing Features](#existing-features)
+        - [Elements on every Page](#elements-on-every-page)
+        - [Home Page](#home-page)
+        - [Dogs Page](#dogs-page)
+        - [Cats Page](#cats-page)
+        - [Small Pets Page](#small-pets-page)
+        - [Birds Page](#birds-page)
+        - [Fish Page](#fish-page)
+        - [Reptiles Page](#reptiles-page)
+        - [On Sale Page](#on-sale-page)
+        - [Register Page](#register-page)
+        - [Login Page](#login-page)
+        - [Profile Page](#profile-page)
+	- [Product Management Page](#product—management-page)
+        - [Log out Page](#log-out-page)
+        - [Cart Page](#cart-page)
+        - [Checkout](#checkout)
+    - [Features for Future Releases](#features-for-future-releases)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+5. [Information Architecture](#information-architecture)
+    - [Database choice](#database-choice)
+    - [Data Models](#data-models)
+        - [User](#user)
+        - [Products App Model](#products-app-model)
+        - [Cart App Models](#cart-app-models)
 
-A blue button should appear to click: _Make Public_,
+6. [Technologies Used](#technologies-used)
+    - [Tools](#tools)
+    - [Databases](#databases)
+    - [Libraries](#libraries)
+    - [Languages](#languages)
 
-Another blue button should appear to click: _Open Browser_.
+7. [Testing](#testing)
+    - See separate [TESTING.md](TESTING.md) file.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+8. [Deployment](#deployment)
+    - [How to run this project locally](#how-to-run-this-project-locally)
+    - [Heroku Deployment](#heroku-deployment)
 
-To log into the Heroku toolbelt CLI:
+9. [Credits](#credits)
+    - [Content](#content)
+    - [Images](#images)
+    - [Code](#code)
+    - [Acknowledgements](#acknowledgements)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+----
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+# Project Summary 
 
-------
+This project is my fourth and final milestone project (Full Stack Frameworks With Django) for the Code Institute Diploma in Software Development.
 
-## Release History
+The purpose of the project is to build a full-stack site based around business logic used to control a centrally-owned dataset , setting up an authentication mechanism and providing paid access to the site's data and/or other activities based on the dataset, such as the purchase of a product/service.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Site Purpose 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+The purpose of the site is to sell pet items and essentials on an online store call PetPals.  Customers can purchase items and user engagement is encouraged through the ability to leave reviews and comments and to create user profiles.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+The site is intended to be visually appealing, and easy to navigate. It has a responsive design so that it can be viewed easily on mobile and desktop.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+# UX
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## Goals
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Site Owner Goals
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+As a site owner I want to be able to:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Create a visually appealing site with a strong brand identity.
+- Add products on the website so I can add new items to my stores.
+- Edit existing products in my store so I can change product prices, descriptions, images and other product information.
+- Delete products on the website so I can remove items from my store.
+- Have links that direct users to our social sites for further engagement.
+- Keep track of sales data to inform future product choices.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Site User Goals
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The central target audience for PetPals are:
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- People who own pets. 
+- People who would like to own a pet. 
+- People who would like the ease of shopping online for pets.
+- People who value door to door delivery.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+As a site user I want to be able to:
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- Find items needed for my pet. 
+- Enjoy browsing all the pet items.
+- Be able to navigate the shop easily, find what I need and make a safe and secure purchase.
+- Buy from a trustworthy online shop. 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+## User Stories
 
-## FAQ about the uptime script
+As a visitor to The House of Mouse website I expect/want/need:
 
-**Why have you added this script?**
+1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it. 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+1. The information I am presented with to be laid out in a way that is easy for me to navigate and digest, so that I find what I need quickly and efficiently.
 
-**How will this affect me?**
+1. The ability to search through small amounts of information to find what I need, and then be able to easily click to get more detailed information when I need it.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+1. The site to be easily navigable from any device, desktop, tablet or phone. For the content to look good and be useable on all of these devices.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+1. To learn more about the shop owner and their process, so that I can be assured I am buying from a small handmade business. 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+1. To be able to read reviews of this shop from previous customers, to build trust in my purchase.
 
-**So….?**
+1. For all information and images to be laid out in a clear and easy to understand way, on whatever size screen I am viewing the website on.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+1. Plenty of high quality images of the products for sale, so I have a clear idea of what I am buying and can see the quality of the products up close.
 
-**Can I opt out?**
+1. To be able to easily find out all the information I need to make an informed purchase. I expect information about materials, measurements, safety and packaging to be available on every listing page.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+1. To be informed if I try to order more items than are available in stock.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+1. For recorded stock levels to be accurate, so there are no delays in receiving my order.
 
-**Anything more?**
+1. A text search function so that I can quickly narrow down my search when looking for something specific.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+1. A clear terms and conditions and privacy policy.
 
----
+1. There to be a frequently asked questions page for any further questions I might have about my order.
 
-Happy coding!
+1. To be able to see a summary of my order on every page of the checkout process.
+
+1. That once I am logged in I can access my account details and update them if I need to. 
+
+1. To be able to find information on my past orders and how to cancel an order. 
+
+1. To be able to connect to the businesses social media channels and/or newsletter, to keep up to date with new listings on the site. 
+
+1. To be able to easily get in contact with the shop owner via a contact form.
+
+1. Feedback from the website I am using when I interact with it, I expect pop ups and modals to inform me when my forms have been completed and sent correctly. Or to let me know when an error has ocurred and what to do next.
