@@ -482,19 +482,6 @@ display: inline-block;
   border-radius: 5px;
 }
 
-@media (min-width: 992px) {
-  .fixed-top-desktop-only {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 1030;
-  }
-
-  .header-container {
-      padding-top: 164px;
-  }
-}
 
 @media (max-width: 991px) {
   .header-container {
@@ -510,7 +497,7 @@ display: inline-block;
   }
 
   .nav-link {
-      padding: 0.15rem;
+      padding: 0.13rem;
   }
 
   .nav-link i.fa-lg {
