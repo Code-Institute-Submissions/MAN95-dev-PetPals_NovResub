@@ -181,8 +181,10 @@ The House of Mouse website has an overall child like, joyful feel, with emphasis
 - The **Facebook logo** icon is included in the footer to lead visitors to The House of Mouse facebook page.
 
 ### Colours
+- The colour scheme for this site was rendered on [Coooler](https://coolors.co/) and can be seen below:
+
 <div align="center">
-    <img src="/static/images/readme/coolor-palette.png" alt="Colors used in the PetPals website" aria-label="Colors used in the PetPals website"/>
+    <img src="/static/images/readme/color-palette.png" alt="Colors used in the PetPals website" aria-label="Colors used in the PetPals website"/>
 </div>
 
 - light grey: #CCCCCC
@@ -192,9 +194,13 @@ The House of Mouse website has an overall child like, joyful feel, with emphasis
 - gold web golden: #FFD700
 - rossso corsa: #D80000
 
-- The brand colours for this project were chosen because the two shades of pink and two shades of grey are taken from the felt mice ears and standard body color. This helps to pull the colours of the site together with the product photographs. 
+- The sapphire blue was chosen as the brand color for PetPals, as it provides a strong presence and is a fun color. 
 
-- The blue was chosen to provide a highlighting contrast for links, prices and important buttons for the user such as "add to cart" and "checkout now".
+- The yellow was chosen to provide a highlighting contrast for the logo and buttons. 
+
+- The red was chosen to highlight prices and on sale items.
+
+- The greys were chosen for this project to provide a neutral background color to information, making a clear seperation from the white background. 
 
 ### Styling
 
