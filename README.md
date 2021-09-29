@@ -159,29 +159,14 @@ As a visitor to The House of Mouse website I expect/want/need:
 
 ## Design Choices
 
-The House of Mouse website has an overall child like, joyful feel, with emphasis on the high quality, artisan handmade feel of the products on sale. The following design choices were made with this in mind:
-
 ### Fonts
 
+- The primary font 'Lato' was chosen for the main text of the site because of it clear readability, clean style and complementary contrast with the secondary font. 
 
-- The primary font 'Lato' was chosen for the main text of the site because of it clear readability, clean style and complementary contrast with the secondary font. This font also looks good in uppercase with a little extra letter spacing, and so could serve nicely as a sub heading as well.
+- The secondary font 'Fredoka One' was chosen for the website name, as it is fun and bold. The rounded edges compliment those of the buttons used in the website. 
 
-- The secondary font 'Emilys Candy' was chosen for the main headings because it is whimsical, childlike and the curled ends to some of the letters look like mouse tails.
-
-### Icons
-<div align="center">
-    <img src="https://i.ibb.co/Cb3k6vM/Clipboard01.jpg" alt="Icons used on The House of Mouse Home Page" aria-label="Icons used on The House of Mouse Home Page" />
-</div>
-
-- In order to keep the site uncluttered only a few icons were utilized. 
-- The **search** icon and **shopping cart** icons were used in the navigation bar as they are conventionally used in this setting and would be what the user expects to see.
-- Yellow **cheese icons** are used as pointers between breadcrumb links on pages that have worked their way deeper into the hierarchical structure of the website information. These were used to add a little humour to a usually boring aspect of a website.
-- On the home page the important facts about The House of Mouse are laid out using icons and simple text for quick assimilation of info (see image above).
-- **Star icons** are used in the testimonials section of the home page, to emphasize the high level of reviews the shop already has on Etsy.
-- The **Facebook logo** icon is included in the footer to lead visitors to The House of Mouse facebook page.
-
-### Colours
-- The colour scheme for this site was rendered on [Coooler](https://coolors.co/) and can be seen below:
+### Colors
+- The colour scheme for this site was rendered on [Cooler](https://coolors.co/) and can be seen below:
 
 <div align="center">
     <img src="/static/images/readme/color-palette.png" alt="Colors used in the PetPals website" aria-label="Colors used in the PetPals website"/>

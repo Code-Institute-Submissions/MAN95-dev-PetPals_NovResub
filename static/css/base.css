@@ -330,6 +330,8 @@ footer ul {
 /* -------------------------------- Checkout  */
 
 
+
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
@@ -420,8 +422,8 @@ footer ul {
 }
 
 .allauth-form-inner-content input {
-  border-color: #000;
-  border-radius: 0;
+  border-color: none;
+  border-radius: 5px;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -435,7 +437,7 @@ footer ul {
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
 /* btn */
-display: inline-block;
+  display: inline-block;
   font-weight: bold;
   color: #fff;
   text-align: center;
