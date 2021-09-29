@@ -356,7 +356,7 @@ USE_AWS | `True`
 # Credits
 
 ## Content
-- 
+- All item content and descriptions was from the [EntirelyPets](https://entirelypets.com/) website.
 
 ### Images
 - All product images were taken from the [EntirelyPets](https://entirelypets.com/) website.
