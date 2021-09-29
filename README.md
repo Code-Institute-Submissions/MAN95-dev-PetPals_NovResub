@@ -262,18 +262,19 @@ _Again this **command may differ depending on your operating system**, please ch
     "terminal.integrated.env.windows": {
         "HOSTNAME": "<enter hostname here>",
         "DEV": "1",
-        "SECRET_KEY": "<enter key here>",
-        "STRIPE_PUBLISHABLE": "<enter key here>",
-        "STRIPE_SECRET": "<enter key here>",
-        "EMAILJS_USER_ID": "<enter key here>",
-        "STRIPE_SUCCESS_URL": "<enter url here>",
-        "STRIPE_CANCEL_URL": "<enter url here>",
+        "SECRET_KEY": "<your secret key>",
+        "STRIPE_PUBLIC_KEY ": "<insert stripe public key>",
+        "STRIPE_SECRET_KEY": "<insert stripe secret key>",
+        "STRIPE_WH_SECRET": "<insert stripe webhook secret>",
+        "EMAIL_HOST_PASS": "<insert the gmail password>",
+        "EMAIL_HOST_USER": "<insert your email address>",
+        "STRIPE_WH_SECRET": "<enter key here>",
         "AWS_ACCESS_KEY_ID": "<enter key here>",
-        "AWS_SECRET_ACCESS_KEY": "<enter key here>",
-        "AWS_STORAGE_BUCKET_NAME": "<enter bucket name here>",
+        "AWS_SECRET_ACCESS_KEY": "<enter bucket name here>",
+        "USE_AWS": "True",
     }
     ```
-
+    
     - If using an IDE that includes a `bashrc` file, open this file and enter all the environment variables listed above using the following format: 
     ```
     HOSTNAME="<enter key here>"
@@ -325,16 +326,16 @@ To deploy PetPals to heroku, take the following steps:
 
 | Key | Value |
 --- | ---
-AWS_ACCESS_KEY_ID | `<your secret key>`
-AWS_SECRET_ACCESS_KEY | `<your secret key>`
+AWS_ACCESS_KEY_ID | `<insert from the aws csv>`
+AWS_SECRET_ACCESS_KEY | `<insert from the aws csv>`
 DATABASE_URL | `<your postgres database url>`
-EMAIL_HOST_PASS | `<your secret key>`
-EMAIL_HOST_USER | `<your heroku app hostname>`
+EMAIL_HOST_PASS | `<insert the gmail password>`
+EMAIL_HOST_USER | `	<insert your email address>`
 SECRET_KEY | `<your secret key>`
-STRIPE_CANCEL_URL | `<link to all-products page in your app>`
-STRIPE_PUBLISHABLE | `<your secret key>`
-STRIPE_SECRET | `<your secret key>`
-STRIPE_SUCCESS_URL | `<link to checkout/confirm page in your app>`
+STRIPE_PUBLIC_KEY | `<insert stripe public key >`
+STRIPE_SECRET_KEY | `<insert stripe secret key >`
+STRIPE_WH_SECRET | `<insert stripe webhook secret>`
+USE_AWS | `True`
 
 8. From the command line of your local IDE:
     - Enter the heroku postres shell 
