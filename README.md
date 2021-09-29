@@ -162,9 +162,7 @@ As a visitor to The House of Mouse website I expect/want/need:
 The House of Mouse website has an overall child like, joyful feel, with emphasis on the high quality, artisan handmade feel of the products on sale. The following design choices were made with this in mind:
 
 ### Fonts
-<div align="center">
-    <img src="https://i.ibb.co/zP4PPRh/Clipboard01.jpg" alt="Fonts used on The House of Mouse website" aria-label="Fonts used on The House of Mouse website" />
-</div>
+
 
 - The primary font 'Lato' was chosen for the main text of the site because of it clear readability, clean style and complementary contrast with the secondary font. This font also looks good in uppercase with a little extra letter spacing, and so could serve nicely as a sub heading as well.
 
@@ -183,12 +181,16 @@ The House of Mouse website has an overall child like, joyful feel, with emphasis
 - The **Facebook logo** icon is included in the footer to lead visitors to The House of Mouse facebook page.
 
 ### Colours
+<div align="center">
+    <img src="/static/images/readme/coolor-palette.png" alt="Colors used in the PetPals website" aria-label="Colors used in the PetPals website"/>
+</div>
 
-- light pink: #FFE4E6
-- pink: #FFBABE
-- dark grey: #373737
-- light grey: #E5E5E5
-- light blue: #7ccfff
+- light grey: #CCCCCC
+- cadet blue crayola: #AAB7C4
+- sapphire blue: #006994
+- capri: #00BFFF
+- gold web golden: #FFD700
+- rossso corsa: #D80000
 
 - The brand colours for this project were chosen because the two shades of pink and two shades of grey are taken from the felt mice ears and standard body color. This helps to pull the colours of the site together with the product photographs. 
 
