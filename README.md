@@ -274,7 +274,7 @@ _Again this **command may differ depending on your operating system**, please ch
         "USE_AWS": "True",
     }
     ```
-    
+
     - If using an IDE that includes a `bashrc` file, open this file and enter all the environment variables listed above using the following format: 
     ```
     HOSTNAME="<enter key here>"
@@ -351,3 +351,28 @@ USE_AWS | `True`
 11. From the link provided add `/admin` to the end of the url, log in with your superuser account and create instances of ShippingDestination and Product within the new database.
 
 12. Once instances of these items exist in your database your heroku site will run as expected.
+
+
+# Credits
+
+## Content
+- 
+
+### Images
+- All product images were taken from the [EntirelyPets](https://entirelypets.com/) website.
+- The carousel images were taken from [shutterstock](https://www.shutterstock.com/).
+
+## Code
+- [Code Institute](https://codeinstitute.net/) - Code learnt during the Full Stack Web Developer course (specifically the Boutique-Ado project) has been implemented in this project.
+
+- The following websites provided inspiration for my website.
+    - [EntirelyPets](https://www.entirelypets.com/)
+    - [Petco](https://www.petco.com/shop/en/petcostore)
+    - [Chewy](https://www.chewy.com/)
+
+- The README file was taken from Anna Greave's 'The House of Mouse' project to use as a template.
+    - [The House of Mouse by Anna Greaves ](https://github.com/AJGreaves/thehouseofmouse)
+
+## Acknowledgements
+- Special thanks to my mentor Moosa, for his time, and guidance with this project.
+- Code Institute tutors for helping support and guide me in the right direction with my code.
