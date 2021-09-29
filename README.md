@@ -1,8 +1,6 @@
-PetPals is an e-commerce site, built using HTML, CSS, JavaScript, Python, and Django. The shop sells a range of pet food and accessories.
+[PetPals](https://petpals-milestone-4.herokuapp.com/) is an e-commerce site, built using HTML, CSS, JavaScript, Python, and Django. The shop sells a range of pet food and accessories.
 
 DISCLAIMER: This website is for educational purposes only and uses products and content from existing brands. Please see the credits section for full information.
-
-The live project can be viewed here.
 
 Test card details:
 * Card Number: 4242 4242 4242 4242
@@ -79,7 +77,7 @@ The purpose of the project is to build a full-stack site based around business l
 
 ## Site Purpose 
 
-The purpose of the site is to sell pet items and essentials on an online store call PetPals.  Customers can purchase items and user engagement is encouraged through the ability to leave reviews and comments and to create user profiles.
+The purpose of the site is to sell pet items and accessories on an online store call PetPals. Customers can purchase items and user engagement is encouraged through the ability to leave reviews and comments and to create user profiles.
 
 The site is intended to be visually appealing, and easy to navigate. It has a responsive design so that it can be viewed easily on mobile and desktop.
 
