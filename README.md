@@ -44,9 +44,6 @@ Test card details:
 5. [Information Architecture](#information-architecture)
     - [Database choice](#database-choice)
     - [Data Models](#data-models)
-        - [User](#user)
-        - [Products App Model](#products-app-model)
-        - [Cart App Models](#cart-app-models)
 
 6. [Technologies Used](#technologies-used)
     - [Tools](#tools)
@@ -209,15 +206,14 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 ### Data Models
 
-#### Structure
-
-This project consists of the following 7 Django apps:
+This project consists of the following 6 Django apps:
 
 - **Home** - Displays the PetPal home page
 
-- **Items** - Handles product display and individual product views
+- **Items** - Handles item display and individual item views
 
     - Type Model - Stores the items types
+
 
     ```python
     name = models.CharField(max_length=254)
@@ -225,6 +221,7 @@ This project consists of the following 7 Django apps:
     ``` 
 
     - Item Model - Stores individual item information
+
 
     ```python
     type = models.ForeignKey('Type', null=True, blank=True, on_delete=models.SET_NULL)
@@ -244,6 +241,7 @@ This project consists of the following 7 Django apps:
 - **Checkout** - Display checkout page and handles payments
 
     - Order Model - Stores order information
+
 
     ```python
     order_number = models.CharField(max_length=32, null=False, editable=False)
@@ -268,6 +266,7 @@ This project consists of the following 7 Django apps:
 
     - Order Line Model - Stores individual items within an order
 
+
     ```python
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     item = models.ForeignKey(Item, null=False, blank=False, on_delete=models.CASCADE)
@@ -278,6 +277,7 @@ This project consists of the following 7 Django apps:
 - **Profiles** - Displays user profile and stores user profile information and order history
 
     - UserProfile Model - Stores user profile information
+
 
     ```python
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -293,6 +293,7 @@ This project consists of the following 7 Django apps:
 - **Reviews** - Handles CRUD operations for product reviews
 
     - Review Model - Stores the review for the product
+
 
     ```python
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
@@ -504,7 +505,7 @@ USE_AWS | `True`
 
 - The README file was taken from Anna Greave's 'The House of Mouse' project to use as a template.
     - [The House of Mouse by Anna Greaves ](https://github.com/AJGreaves/thehouseofmouse)
-
+    
 ## Acknowledgements
 - Special thanks to my mentor Moosa, for his time, and guidance with this project.
 - Code Institute tutors for helping support and guide me in the right direction with my code.
