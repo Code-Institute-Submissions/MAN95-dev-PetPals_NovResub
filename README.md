@@ -156,3 +156,54 @@ As a visitor to The House of Mouse website I expect/want/need:
 1. To be able to easily get in contact with the shop owner via a contact form.
 
 1. Feedback from the website I am using when I interact with it, I expect pop ups and modals to inform me when my forms have been completed and sent correctly. Or to let me know when an error has ocurred and what to do next.
+
+## Design Choices
+
+The House of Mouse website has an overall child like, joyful feel, with emphasis on the high quality, artisan handmade feel of the products on sale. The following design choices were made with this in mind:
+
+### Fonts
+<div align="center">
+    <img src="https://i.ibb.co/zP4PPRh/Clipboard01.jpg" alt="Fonts used on The House of Mouse website" aria-label="Fonts used on The House of Mouse website" />
+</div>
+
+- The primary font 'Lato' was chosen for the main text of the site because of it clear readability, clean style and complementary contrast with the secondary font. This font also looks good in uppercase with a little extra letter spacing, and so could serve nicely as a sub heading as well.
+
+- The secondary font 'Emilys Candy' was chosen for the main headings because it is whimsical, childlike and the curled ends to some of the letters look like mouse tails.
+
+### Icons
+<div align="center">
+    <img src="https://i.ibb.co/Cb3k6vM/Clipboard01.jpg" alt="Icons used on The House of Mouse Home Page" aria-label="Icons used on The House of Mouse Home Page" />
+</div>
+
+- In order to keep the site uncluttered only a few icons were utilized. 
+- The **search** icon and **shopping cart** icons were used in the navigation bar as they are conventionally used in this setting and would be what the user expects to see.
+- Yellow **cheese icons** are used as pointers between breadcrumb links on pages that have worked their way deeper into the hierarchical structure of the website information. These were used to add a little humour to a usually boring aspect of a website.
+- On the home page the important facts about The House of Mouse are laid out using icons and simple text for quick assimilation of info (see image above).
+- **Star icons** are used in the testimonials section of the home page, to emphasize the high level of reviews the shop already has on Etsy.
+- The **Facebook logo** icon is included in the footer to lead visitors to The House of Mouse facebook page.
+
+### Colours
+
+- light pink: #FFE4E6
+- pink: #FFBABE
+- dark grey: #373737
+- light grey: #E5E5E5
+- light blue: #7ccfff
+
+- The brand colours for this project were chosen because the two shades of pink and two shades of grey are taken from the felt mice ears and standard body color. This helps to pull the colours of the site together with the product photographs. 
+
+- The blue was chosen to provide a highlighting contrast for links, prices and important buttons for the user such as "add to cart" and "checkout now".
+
+### Styling
+
+- Subtle box shadowing and curved corners were applied to elements that needed a little extra emphasis and style. For example on product images, cart summary and form wrappers. 
+- In cases where an area is clickable, for example product images or call to action buttons, the shadow size is increased and animated when the user hovers over that element, this was done to make the area more tempting to click.
+- Curved corner styling was chosen for its friendly feel, and as it is a common stylistic choice of bootstrap it blends well with styles used from that library on this project.
+
+## Wireframes
+
+These wireframes were created using [Balsamiq](https://balsamiq.com/) during the Scope Plane part of the design and planning process for this project. 
+
+- [Home](/static/images/readme/wireframe-home.png)
+- [Items](/static/images/readme/wireframe-items.png)
+- [Item Detail](/static/images/readme/wireframe-item-detail.png)
