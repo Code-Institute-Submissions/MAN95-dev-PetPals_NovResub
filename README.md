@@ -200,7 +200,107 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 - [Items](/static/images/readme/wireframe-items.png)
 - [Item Detail](/static/images/readme/wireframe-item-detail.png)
 
+# Information Architecture
 
+### Database Choice
+
+- As a framework Django works with SQL databases. I worked with the standard **sqlite3** database installed with Django.
+- On deployment, the SQL database provided by Heroku is a **PostgreSQL** database. 
+
+### Data Models
+
+#### Structure
+
+This project consists of the following 7 Django apps:
+
+- **Home** - Displays the PetPal home page
+
+- **Items** - Handles product display and individual product views
+
+    - Type Model - Stores the items types
+
+    ```python
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    ``` 
+
+    - Item Model - Stores individual item information
+
+    ```python
+    type = models.ForeignKey('Type', null=True, blank=True, on_delete=models.SET_NULL)
+    name = models.CharField(max_length=254)
+    description = models.TextField()
+    instructions = models.TextField(null=True, blank=True)
+    ingredients = models.TextField(null=True, blank=True)
+    questions = models.TextField(null=True, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    onsale = models.BooleanField(default=False, null=True, blank=True)
+    onsale_price = models.DecimalField(null=True, max_digits=6, decimal_places=2)
+    image = models.ImageField(null=True, blank=True)
+    ``` 
+
+- **Cart** - Handles CRUD operations for items in cart
+
+- **Checkout** - Display checkout page and handles payments
+
+    - Order Model - Stores order information
+
+    ```python
+    order_number = models.CharField(max_length=32, null=False, editable=False)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True, related_name='orders')
+    full_name = models.CharField(max_length=50, null=False, blank=False)
+    email = models.EmailField(max_length=254, null=False, blank=False)
+    phone_number = models.CharField(max_length=20, null=False, blank=False)
+    country = CountryField(blank_label='Country *', null=False, blank=False)
+    postcode = models.CharField(max_length=20, null=True, blank=True)
+    town_or_city = models.CharField(max_length=40, null=False, blank=False)
+    street_address1 = models.CharField(max_length=80, null=False, blank=False)
+    street_address2 = models.CharField(max_length=80, null=True, blank=True)
+    county = models.CharField(max_length=80, null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
+    delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    original_cart = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    ``` 
+
+    - Order Line Model - Stores individual items within an order
+
+    ```python
+    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
+    item = models.ForeignKey(Item, null=False, blank=False, on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False, blank=False, default=0)
+    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    ``` 
+
+- **Profiles** - Displays user profile and stores user profile information and order history
+
+    - UserProfile Model - Stores user profile information
+
+    ```python
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    default_phone_number = models.CharField(max_length=20, null=True, blank=True)
+    default_street_address1 = models.CharField(max_length=80, null=True, blank=True)
+    default_street_address2 = models.CharField(max_length=80, null=True, blank=True)
+    default_town_or_city = models.CharField(max_length=40, null=True, blank=True)
+    default_county = models.CharField(max_length=80, null=True, blank=True)
+    default_postcode = models.CharField(max_length=20, null=True, blank=True)
+    default_country = CountryField(blank_label='Country', null=True, blank=True)
+    ``` 
+
+- **Reviews** - Handles CRUD operations for product reviews
+
+    - Review Model - Stores the review for the product
+
+    ```python
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    date_created = models.DateTimeField(auto_now_add=True)
+    ``` 
 
 # Technologies Used
 
