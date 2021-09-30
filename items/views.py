@@ -12,10 +12,10 @@ from profiles.models import UserProfile
 
 # Create your views here.
 
+
 def all_items(request):
     """ A view to show all items, including sorting and search queries """
     
-
     items = Item.objects.all()
     query = None
     types = Type.objects.all()
@@ -37,17 +37,19 @@ def all_items(request):
             items = items.order_by(sortkey)
 
         if 'type' in request.GET:
-            types= request.GET['type'].split(',')
+            types = request.GET['type'].split(',')
             items = items.filter(type__name__in=types)
             types = Type.objects.filter(name__in=types)
 
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('items'))
                 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(
+                name__icontains=query) | Q(description__icontains=query)
             items = items.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -107,7 +109,9 @@ def add_item(request):
             messages.success(request, 'Successfully added item!')
             return redirect(reverse('item_detail', args=[item.id]))
         else:
-            messages.error(request, 'Failed to add item. Please ensure the form is valid.')
+            messages.error(
+                request, 
+                'Failed to add item. Please ensure the form is valid.')
     else:
         form = ItemForm()
         
@@ -134,7 +138,9 @@ def edit_item(request, item_id):
             messages.success(request, 'Successfully updated item!')
             return redirect(reverse('item_detail', args=[item.id]))
         else:
-            messages.error(request, 'Failed to update item. Please ensure the form is valid.')
+            messages.error(
+                request, 
+                'Failed to update item. Please ensure the form is valid.')
     else:
         form = ItemForm(instance=item)
         messages.info(request, f'You are editing {item.name}')

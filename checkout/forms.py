@@ -17,7 +17,7 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-           'full_name': 'Full Name',
+            'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
             'postcode': 'Postal Code',
@@ -37,3 +37,4 @@ class OrderForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+            

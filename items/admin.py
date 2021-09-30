@@ -3,6 +3,7 @@ from .models import Item, Type
 
 # Register your models here.
 
+
 class ItemAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -10,6 +11,7 @@ class ItemAdmin(admin.ModelAdmin):
         'price',
         'image',
     )
+
 
 class TypeAdmin(admin.ModelAdmin):
     list_display = (
