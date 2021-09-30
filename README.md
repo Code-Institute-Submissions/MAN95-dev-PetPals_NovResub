@@ -565,8 +565,9 @@ USE_AWS | `True`
     - [Petco](https://www.petco.com/shop/en/petcostore)
     - [Chewy](https://www.chewy.com/)
 
-- The README file was taken from Anna Greave's 'The House of Mouse' project to use as a template.
+- The README file was taken from both Anna Greave's 'The House of Mouse' project and yipmunallen's 'NEAT' project to use as a template.
     - [The House of Mouse by Anna Greaves ](https://github.com/AJGreaves/thehouseofmouse)
+    - [NEAT](https://github.com/yipmunallen/fourth-milestone-project)
     
 ## Acknowledgements
 - Special thanks to my mentor Moosa, for his time, and guidance with this project.
