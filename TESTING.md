@@ -48,8 +48,7 @@ cart.html | PASS
 
 Javascript - Validated using [JSHint Validator](https://jshint.com/) with no errors found.
 
-Python - Validated using [PEP 8](http://pep8online.com/) with no errors found with one exception: - settings.py (the Django settings file has a known issue, but is acceptable to not force a line break) - line too long (> 79 characters) - AUTH_PASSWORD_VALIDATORS = [{}] x 
-
+Python - Validated using [PEP 8](http://pep8online.com/) with no errors found.
 ## User Stories Testing
 
 The following section goes through the user stories identified in the [Ux section of README.md](README.md#UX) to check that the site meets those needs.
@@ -251,6 +250,7 @@ Responsive design was also tested in the Chrome Developer Tools device simulator
     <img src="/static/images/readme/console-error.png" target="_blank" rel="noopener" alt="console error"               aria-label="console error"/>
 </div>
 
+
     ```js
     document.getElementById("defaultOpen").click();
     }
@@ -272,6 +272,7 @@ Responsive design was also tested in the Chrome Developer Tools device simulator
 3. **Tab in item details was not changing tabs** 
     - Tab in items details was not changing tabs, all content was displaying the the first tab. 
     - JS was in a link tag and loading as a style sheet as follows:
+
 
     ```html
     <link rel="stylesheet" href="{% static 'js/scripts.js' %}">

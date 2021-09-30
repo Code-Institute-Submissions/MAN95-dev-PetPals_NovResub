@@ -27,24 +27,8 @@ Test card details:
     - [Wireframes](#wireframes)
 
 3. [Features](#features)
-    - [Existing Features](#existing-features)
-        - [Elements on every Page](#elements-on-every-page)
-        - [Home Page](#home-page)
-        - [Dogs Page](#dogs-page)
-        - [Cats Page](#cats-page)
-        - [Small Pets Page](#small-pets-page)
-        - [Birds Page](#birds-page)
-        - [Fish Page](#fish-page)
-        - [Reptiles Page](#reptiles-page)
-        - [On Sale Page](#on-sale-page)
-        - [Register Page](#register-page)
-        - [Login Page](#login-page)
-        - [Profile Page](#profile-page)
-	- [Product Management Page](#product—management-page)
-        - [Log out Page](#log-out-page)
-        - [Cart Page](#cart-page)
-        - [Checkout](#checkout)
-    - [Features for Future Releases](#features-for-future-releases)
+    - [Common Features](#common-features)
+    - [Page Features](#page-features)
 
 5. [Information Architecture](#information-architecture)
     - [Database choice](#database-choice)
@@ -191,47 +175,88 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 - [Item Detail](/static/images/readme/wireframe-item-detail.png)
 
 # Features
- 
-## Existing Features
 
-### Elements on every page
+### Common Features 
 
-#### Navbar:
+#### Navbar
 
-<div align="center">
-    <img src="https://i.ibb.co/K7fFpC8/navbar-desktop.png" alt="The House of Mouse Navbar on desktop devices" aria-label="The House of Mouse Navbar on desktop devices" />
-</div>
+- The navigation bar is sticky to the top of the window so that it can be accessed at all times
+- All of the main pages (other than the individual product pages) can be accessed from the navigation links
+- On smaller screen sizes, all of the navigation links can be accessed via the hamburger button
+- The brand logo will redirect the user back to the homepage when clicked
+- The search bar allows users to search for items. 
 
-- The navbar features on every page except the checkout pages. It was deliberately not included on those pages as that is the standard for online shops, to remove distractions and links that would take the user away from their cart once they decide to start the checkout process.
+#### Footer 
 
-## Features for Future Releases
+- The footer is displayed at the bottom of the page for all content sizes. 
+- It contains links to socials, however these will just redirect to the website home pages for this project. The links open in a new page so as not the close the site page.
 
-1. **Password reset by email.**
-    - I already looked into this, but it required changing settings in my private gmail account to less secure ones. Which is not something I am willing to do at this moment. When/if this site is deployed to it's own domain and is being used as a fully functioning online store, then I will invest in a separate gmail account specifically for it and get this feature set up.
-2. **Sending an email to customer when their new order has been placed.**
-    - This feature also required the gmail settings mentioned above, and is one that would be included if/when the site is properly launched.
-3. **Build staff pages to view all order info needed together for easier shipping process.**
-    - Giving staff the ability to view all order information in one place, rather than having to visit the Stripe dashboard or admin panel to see the orders. Functionality for this page might include:
-        - Ability to print out pre-formatted shipping labels
-        - Update order as "shipped" in the database and add tracking information so that the customer is updated with this information at the same time.
-        - Integration with DHL to follow tracking on packages sent.
-        - Ability to handle cancellations and refunds.
-4. **Coupons and discount codes.**
-    - Checkout pages to include a field for customers to enter discount codes or coupons to adjust their final payment cost.
-5. **Gallery app.**
-    - A gallery of previously made custom orders. Many fans of The House of Mouse enjoy seeing the many weird and wonderful creations and artistic flair of the owner. A gallery of mice not for sale, would be enjoyed by many of these fans, and would inspire those looking for a custom order.
-6. **User favourites.**
-    - Another feature designed for The House of Mouse fan, who would return to the site many times and have a "dream collection" of mice they would like to own one day. 
-    - This feature was originally included in the wireframes for this project, but unfortunately had to be clipped from the current release due to time constraints.
-7. **Embedded Mailchimp newsletter signup form in footer.**
-    - At the moment the footer contains a button to lead the user to the newsletter signup form, currently hosted by Mailchimp. 
-    - For ease of use for the user, and to get rid of more clicks needed to sign up, I would like to add the signup form fully embedded into my own website in the footer.
-8. **Additional payment methods.**
-    - The current free version of Stripe checkout only allows for customers to pay via credit card. However this is not a popular form of payment in The Netherlands, with many more people preferring to pay via PayPal, bank transfer or iDeal. Stripe does offer these payment methods, and once this site is deployed for actual use these will be added to the options for customers to choose from.
-9. **Auto login on registering a new account**
-    - A nice extra feature to streamline the login process.
+#### Toasts
 
-This section will continue to grow as the site is deployed to its own domain and implemented in the real word. New issues and needs will become apparent as the site is used.
+- Toasts have been used to provide feedback to users, displaying success, error, info and warning messages.
+- A toast is also used to display the current cart to the user when items are added to it.
+- The cart toast will fade out automatically or can be dismissed using the close button. 
+
+#### Admin - Features that are only available to admin accounts
+
+- Admin's have an additional option available from the user icon dropdown in the navigation bar:
+    - Item Management (used to add an item to the site).
+- On individual item detail pages, buttons to edit and delete an item from the UI appear for admin users only.
+    - The edit button will open a form containing the current item information
+    - The delete button will delete the item. 
+- Access to all the following are available via the Django admin site:
+    - User Profiles
+    - Item types
+    - Items
+    - Orders
+    - Item reviews
+
+### Page Features 
+
+#### Home Page
+
+- The home page displays 3 carousel images of pets. 
+- Below the carousel images are the On Sale items, of which 8 are displayed on the home page. Below the On Sale items, is a button "See All On Sale", that will take the user to the "All Items On Sale" page. 
+- The last section is "Shop by pet" which displays a button for each pet, that PetPals is selling items for. If you hover over the button, it displays the pet name, along with the icon. 
+
+#### Items Page
+
+- Users can select to view specific types of items from the navigation bar's dropdown link for each pet, or by using the tag buttons. 
+- The pet item pages also contain a dropdown that allow users to sort by:
+    - Name (A-Z)
+    - Name (Z-A)
+    - Category (A-Z)
+    - Category (Z-A)
+    - Price (Low - High)
+    - Price (High - Low)
+
+#### Item Details Page
+
+- Item details include the item image, name, price and description. The description appears in a tab below the image and "Add to Cart" button. The tab has the option of showing ingredients, instructions, and FAQs, depending on whether the item has them. Description, Reviews and Write a review automatically appear for every item. 
+- The reviews tab shows the reviews, which include the date created, review title, username of reviewer, and the review subject. 
+- The Write a review tab, if the site user is not signed in, they will be prompted to log in or sign up. If the user is already signed in, this tab will contain a form allowing them to leave a review
+- The quantity selector allow users to select 1-20 of a product.
+- An "Add to Cart" button adds the item (with quantity) to the cart.
+
+#### Cart Page
+
+- Users can see all of the items that are in their cart
+- The quantity of an item in the cart can be updated by updating the quantity and then clicking the "Update" button. This will reload the page, and update the cart totals.
+- An item can be deleted from the cart by clicking the "Delete" button.
+- There is a cart summary card which shows the Subtotal, Delivery and Total Amount. The delivery charge is automatically populated as 10% of the order charge. If the cart total is above the delivery threshold of "$50" then the delivery charge is set to 0. If the cart total is below the delivery threshold, the user is informed of how much more they need to spend to reach it.
+- If the cart is empty, the "Secure Checkout" button is removed.
+
+#### Checkout Page
+
+- This page contains a form where users can enter their personal, delivery and card information.
+- A summary of the order is shown so that users are reminded of what they are purchasing.
+- At the bottom of the screen are two buttons allowing the user to either "Adjust cart" or "Complete Order".
+- Underneath the "Complete Order" button, the user is reminded that their card will be charged $[ Order Amount ].
+
+#### User Profile Page
+
+- Users can use the "Default Information" form to submit default delivery information that will be autofilled next time they check out.
+- The "Order History" section provides users with a last of their past orders. Clicking on the order number will direct the user to the order confirmation of that order so that they can see the order details in full.
 
 # Information Architecture
 
