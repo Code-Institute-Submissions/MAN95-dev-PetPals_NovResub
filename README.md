@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://i.ibb.co/1znc0qC/website-banner-simple-650.png" href="https://thehouseofmouse.herokuapp.com/" target="_blank" rel="noopener" alt="The House of Mouse, Tails of Joy" aria-label="The House of Mouse, Tails of Joy" />
+    <img src="/static/images/readme/mock-up.png" target="_blank" rel="noopener" alt="PetPals" aria-label="PetPals"/>
 </div>
 
 [PetPals](https://petpals-milestone-4.herokuapp.com/) is an e-commerce site, built using HTML, CSS, JavaScript, Python, and Django. The shop sells a range of pet food and accessories.
