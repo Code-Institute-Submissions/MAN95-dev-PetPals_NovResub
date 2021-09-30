@@ -6,10 +6,12 @@ from items.models import Item
 
 # Create your views here.
 
+
 def view_cart(request):
     """ A view that renders the bag contents page """
 
     return render(request, 'cart/cart.html')
+    
 
 def add_to_cart(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """

@@ -53,9 +53,7 @@
                 </div>
                 </div>                                                                                        
                 </div>      
-                {% endif %}  
-            </div>
-        </div>                    
+                {% endif %}                    
     {% endfor %}    
 {% else %}    
     <div id="Reviews" class="tabcontent mb-3">
@@ -63,7 +61,6 @@
         <hr>   
     </div>          
 {% endif %}                 
-    </div>
 
 <div id="Write_a_review" class="tabcontent col-12 col-md-8 offset-lg-2 mb-3">
     {% if request.user.is_authenticated and review_form != None %}

@@ -312,7 +312,8 @@ footer ul {
   }
 
    /* Style the review dropdown button */
-  #review-options {
+  #review-options,
+  #no-reviews {
     color: #ccc;
   }
 
@@ -427,7 +428,6 @@ footer ul {
 }
 
 .allauth-form-inner-content input {
-  border-color: none;
   border-radius: 5px;
 }
 
@@ -455,7 +455,7 @@ footer ul {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 5px;
-
+}
 
 .allauth-form-inner-content a {
   color: #17a2b8; /* text-info */
