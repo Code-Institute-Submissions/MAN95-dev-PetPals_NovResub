@@ -121,17 +121,15 @@ As a visitor to the PetPals website I expect/want/need:
 
 1. To easily find what I am looking for, I want the layout of the site to make sense so I am not confused or put off using it. 
 
-1. The information I am presented with to be laid out in a way that is easy for me to navigate and digest, so that I find what I need quickly and efficiently.
-
 1. The ability to search through small amounts of information to find what I need, and then be able to easily click to get more detailed information when I need it.
 
 1. The site to be easily navigable from any device, desktop, tablet or phone. For the content to look good and be useable on all of these devices.
 
 1. To be able to read reviews of items bought from previous customers, to build trust in my purchase.
 
-1. For all information and images to be laid out in a clear and easy to understand way, on whatever size screen I am viewing the website on.
+1. Leave a review on a product so that I can inform other shoppers about whether it was a good purchase or not.
 
-1. Plenty of high quality images of the products for sale, so I have a clear idea of what I am buying and can see the quality of the products up close.
+1. For all information and images to be laid out in a clear and easy to understand way, on whatever size screen I am viewing the website on.
 
 1. To be able to easily find out all the information I need to make an informed purchase. I expect information about the description, ingredients, and instructions where necessary. 
 
