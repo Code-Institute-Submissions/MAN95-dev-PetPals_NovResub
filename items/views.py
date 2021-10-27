@@ -15,7 +15,7 @@ from profiles.models import UserProfile
 
 def all_items(request):
     """ A view to show all items, including sorting and search queries """
-    
+
     items = Item.objects.all()
     query = None
     types = Type.objects.all()
@@ -47,7 +47,7 @@ def all_items(request):
                 messages.error(
                     request, "You didn't enter any search criteria!")
                 return redirect(reverse('items'))
-                
+
             queries = Q(
                 name__icontains=query) | Q(description__icontains=query)
             items = items.filter(queries)
@@ -84,7 +84,7 @@ def item_detail(request, item_id):
             edit_review_form = None
     else:
         edit_review_form = None
-  
+
     context = {
         'item': item,
         'reviews': reviews,
@@ -101,7 +101,7 @@ def add_item(request):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     if request.method == 'POST':
         form = ItemForm(request.POST, request.FILES)
         if form.is_valid():
@@ -110,11 +110,11 @@ def add_item(request):
             return redirect(reverse('item_detail', args=[item.id]))
         else:
             messages.error(
-                request, 
+                request,
                 'Failed to add item. Please ensure the form is valid.')
     else:
         form = ItemForm()
-        
+
     template = 'items/add_item.html'
     context = {
         'form': form,
@@ -139,7 +139,7 @@ def edit_item(request, item_id):
             return redirect(reverse('item_detail', args=[item.id]))
         else:
             messages.error(
-                request, 
+                request,
                 'Failed to update item. Please ensure the form is valid.')
     else:
         form = ItemForm(instance=item)
@@ -165,6 +165,3 @@ def delete_item(request, item_id):
     item.delete()
     messages.success(request, 'Item deleted!')
     return redirect(reverse('items'))
-
-
-

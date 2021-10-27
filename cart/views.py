@@ -12,7 +12,7 @@ def view_cart(request):
     """ A view that renders the bag contents page """
 
     return render(request, 'cart/cart.html')
-    
+
 
 def add_to_cart(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
@@ -29,7 +29,7 @@ def add_to_cart(request, item_id):
                 )
     else:
             cart[item_id] = quantity
-            messages.success(request, f'Added {item.name} to your cart')  
+            messages.success(request, f'Added {item.name} to your cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
@@ -48,8 +48,8 @@ def adjust_cart(request, item_id):
             request, f'Updated {item.name} quantity to {cart[item_id]}'
             )
     else:
-        cart.pop(item_id)  
-        messages.success(request, f'Removed {item.name} from your cart')  
+        cart.pop(item_id)
+        messages.success(request, f'Removed {item.name} from your cart')
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
