@@ -2,21 +2,31 @@
     <div class="row mx-auto footer-width" style="width:90%;">
         <div class="col-12 col-sm-6 col-lg-3 footer-link">
         <ul>
-            <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                <h2 class="logo-font text-white mt-4"><strong>PetPals</strong> <i class="fas fa-paw"></i></h2>
-            </a>
-            <a class="social-icon" href="https://www.facebook.com/" target="_blank">
-                <i class="fab fa-facebook-square fa-2x text-white ml-5 mb-3"></i>
-            </a>
-            <a class="social-icon" href="https://www.instagram.com/" target="_blank">
-                <i class="fab fa-instagram-square fa-2x text-white ml-3"></i>
-            </a><br>
-            <a class="social-icon" href="https://www.pinterest.com/" target="_blank">
-                <i class="fab fa-pinterest-square fa-2x text-white ml-5"></i>
-            </a>
-            <a class="social-icon" href="https://twitter.com/" target="_blank">
-                <i class="fab fa-twitter-square fa-2x text-white ml-3"></i>
-            </a>
+            <li>
+                <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                    <h2 class="logo-font text-white mt-4"><strong>PetPals</strong> <i class="fas fa-paw"></i></h2>
+                </a>
+            </li>
+            <li>
+                <a class="social-icon" href="https://www.facebook.com/" target="_blank">
+                    <i class="fab fa-facebook-square fa-2x text-white ml-5 mb-3"></i>
+                </a>
+            </li>
+            <li>
+                <a class="social-icon" href="https://www.instagram.com/" target="_blank">
+                    <i class="fab fa-instagram-square fa-2x text-white ml-3"></i>
+                </a>
+            </li>
+            <li>
+                <a class="social-icon" href="https://www.pinterest.com/" target="_blank">
+                    <i class="fab fa-pinterest-square fa-2x text-white ml-5"></i>
+                </a>
+            </li>
+            <li>
+                <a class="social-icon" href="https://twitter.com/" target="_blank">
+                    <i class="fab fa-twitter-square fa-2x text-white ml-3"></i>
+                </a>
+            </li>
         </ul>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 footer-link">
@@ -51,8 +61,10 @@
                     <li class="footer-item"><a href="{% url 'account_signup' %}">Register</a></li>
                     <li class="footer-item"><a href="{% url 'account_login' %}">Login</a></li>
                 {% endif %}
+            </ul>
         </div>
         <div class="col-12 text-center text-white mb-3 mt-5">
             <small>© PetPals 2021 <span id="copyright-year"></span></small>
         </div>
+    </div>
 </footer>
