@@ -333,11 +333,6 @@ footer ul {
       color: #aab7c4;
   }
 
-/* -------------------------------- Checkout  */
-
-
-
-
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
@@ -505,6 +500,7 @@ footer ul {
 
   .nav-link {
       padding: 0.15rem;
+      font-size: 16px;
   }
 
   .nav-link i.fa-lg {
