@@ -62,13 +62,13 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="text-white nav-link" href="#" id="user-option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-2x"></i></div>
                                 <p class="my-0">Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0" aria-labelledby="user-option">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <a href="{% url 'add_item' %}" class="dropdown-item">Item Management</a>
