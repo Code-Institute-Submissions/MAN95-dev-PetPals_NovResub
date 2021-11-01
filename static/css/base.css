@@ -93,7 +93,8 @@ footer ul {
     margin: 0;
   }
   
-.footer-item {
+.footer-item, 
+.contact-us {
     color: white;
     -webkit-transition: 0.3s all ease-in-out 0.2s;
     transition: 0.3s all ease-in-out 0.2s;
@@ -123,6 +124,10 @@ footer ul {
 
 #footer h2.logo-font {
   font-size: 30px;
+}
+
+a.social-icon {
+  display: inline-block;
 }
 
 /* -------------------------------- Styling for home page */
@@ -308,7 +313,7 @@ footer ul {
     display: inline;
     padding: 6px 12px;
     border: 1px solid #ccc;
-    border-top: none;
+    border-top: none
   }
 
    /* Style the review dropdown button */
@@ -322,7 +327,7 @@ footer ul {
   #review-options:focus {
     color: #FFD700;
   }
-  
+
 /* -------------------------------- Cart  */
   .update-link,
   .remove-item {
