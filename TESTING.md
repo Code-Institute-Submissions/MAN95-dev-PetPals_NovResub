@@ -48,7 +48,8 @@ cart.html | PASS
 
 Javascript - Validated using [JSHint Validator](https://jshint.com/) with no errors found.
 
-Python - Validated using [PEP 8](http://pep8online.com/) with no errors found.
+Python - Validated using [PEP 8](http://pep8online.com/) with no errors found with one exception: - ```settings.py``` (the Django settings file has a known issue, but is acceptable to not force a line break) - line too long (> 79 characters) - ```AUTH_PASSWORD_VALIDATORS = [{}]``` x 4
+
 ## User Stories Testing
 
 The following section goes through the user stories identified in the [Ux section of README.md](README.md#UX) to check that the site meets those needs.
