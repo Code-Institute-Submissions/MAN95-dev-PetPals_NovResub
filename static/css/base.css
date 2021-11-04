@@ -338,6 +338,60 @@ a.social-icon {
       color: #aab7c4;
   }
 
+/* ------ Cart ------ */
+
+.cart-product-name{
+  color: #433E3F;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.cart-product-name:hover{
+  color: #CDB7C4;
+}
+
+.cart-total{
+  font-weight: 600;
+}
+
+.update-cart
+, .remove-item {
+  cursor: pointer;
+}
+
+.cart-items-total{
+  margin: 3rem 0;
+  text-transform: uppercase;
+}
+
+.upper-text
+,.upper-text span{
+  color: #433E3F;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.cart-card-header{
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.card-footer-text{
+  font-size: 1.3rem;
+  color: #764E35;
+}
+
+.cart-footer{
+  padding: 2rem 1rem;
+}
+
+.cart-footer-row{
+  margin: 2rem 0;
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
