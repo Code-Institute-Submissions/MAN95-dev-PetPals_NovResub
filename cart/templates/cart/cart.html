@@ -37,7 +37,13 @@ Cart
                                         <div>
                                             <a class="cart-product-name"
                                                 href="{% url 'item_detail' item.item.id %}">{{ item.item.name }}</a>
-                                            <p>£{{ item.item.price }}</p>
+                                            {% if item.item.onsale %}
+                                                <p class="my-0"><strong>Price Each: </strong>${{ item.item.onsale_price  }}</p>
+                                                <p><strong>Subtotal: </strong>${{ item.item.onsale_price | calc_subtotal:item.quantity }}</p>
+                                            {% else %}
+                                                <p class="my-0"><strong>Price Each: </strong>${{ item.item.price  }}</p>
+                                                <p><strong>Subtotal: </strong>${{ item.item.price | calc_subtotal:item.quantity }}</p>
+                                            {% endif %}
                                             <form class="form update-form mb-3" method="POST"
                                                 action="{% url 'adjust_cart' item.item_id %}">
                                                 {% csrf_token %}
@@ -79,7 +85,11 @@ Cart
                                             </a>
                                         </div>
                                         <p class="upper-text cart-total">
-                                            £{{ item.item.price | calc_subtotal:item.quantity }}</p>
+                                        {% if item.item.onsale %}
+                                            <p class="my-0 font-weight-bold">${{ item.item.onsale_price | calc_subtotal:item.quantity }}</p>
+                                        {% else %}
+                                            <p class="my-0 font-weight-bold">${{ item.item.price | calc_subtotal:item.quantity }}</p>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -140,14 +150,18 @@ Cart
         </div>
         {% else %}
         <div class="row cart-items-total">
-            <h2>Your cart is currently empty</h2>
+            <h4>Your cart is currently empty</h4>
         </div>
         <div class="row cart-footer-row">
             <div class="col-lg-12">
                 <div class="row bg-light align-items-center text-center">
                     <div class="col-md-6 text-md-left cart-footer">
-                        <a class="btn btn-yellow" href="{% url 'items' %}"><i
-                                class="fas fa-long-arrow-alt-left mr-4"></i>Continue shopping</a>
+                        <a href="{% url 'items' %}" class="btn btn-yellow mt-2 mr-2">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span>Keep Shopping</span>
+                        </a>
                     </div>
                 </div>
             </div>

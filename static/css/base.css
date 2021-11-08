@@ -332,13 +332,12 @@ a.social-icon {
   .update-link,
   .remove-item {
       cursor: pointer;
+      font-size: 13px;
   }
 
   input[name='q']::placeholder {
       color: #aab7c4;
   }
-
-/* ------ Cart ------ */
 
 .cart-product-name{
   color: #433E3F;
@@ -355,15 +354,9 @@ a.social-icon {
   font-weight: 600;
 }
 
-.update-cart
-, .remove-item {
-  cursor: pointer;
-  font-size: 13px;
-}
-
 .cart-items-total{
   margin: 3rem 0;
-  text-transform: uppercase;
+  font-family: 'Lato';
 }
 
 
