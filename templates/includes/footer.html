@@ -1,33 +1,33 @@
 <footer id="footer" class="container-fluid mx-auto">
     <div class="row mx-auto footer-width" style="width:90%;">
         <div class="col-12 col-sm-6 col-lg-3 footer-link">
-        <ul>
-            <li>
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-white mt-4"><strong>PetPals</strong> <i class="fas fa-paw"></i></h2>
-                </a>
-            </li>
-            <li>
-                <a class="social-icon" href="https://www.facebook.com/" target="_blank">
-                    <i class="fab fa-facebook-square fa-2x text-white ml-5 mb-3"></i>
-                </a>
-            </li>
-            <li>
-                <a class="social-icon" href="https://www.instagram.com/" target="_blank">
-                    <i class="fab fa-instagram-square fa-2x text-white ml-3"></i>
-                </a>
-            </li>
-            <li>
-                <a class="social-icon" href="https://www.pinterest.com/" target="_blank">
-                    <i class="fab fa-pinterest-square fa-2x text-white ml-5"></i>
-                </a>
-            </li>
-            <li>
-                <a class="social-icon" href="https://twitter.com/" target="_blank">
-                    <i class="fab fa-twitter-square fa-2x text-white ml-3"></i>
-                </a>
-            </li>
-        </ul>
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                        <h2 class="logo-font text-white mt-4"><strong>PetPals</strong> <i class="fas fa-paw"></i></h2>
+                    </a>
+                </li>
+                <li>
+                    <a class="social-icon" href="https://www.facebook.com/" target="_blank">
+                        <i class="fab fa-facebook-square fa-2x text-white ml-5 mb-3"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="social-icon" href="https://www.instagram.com/" target="_blank">
+                        <i class="fab fa-instagram-square fa-2x text-white ml-3"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="social-icon" href="https://www.pinterest.com/" target="_blank">
+                        <i class="fab fa-pinterest-square fa-2x text-white ml-5"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="social-icon" href="https://twitter.com/" target="_blank">
+                        <i class="fab fa-twitter-square fa-2x text-white ml-3"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 footer-link">
             <h5 class="text-uppercase text-white mt-5"><strong>Contact us</strong></h5>
@@ -39,13 +39,27 @@
         <div class="col-12 col-sm-6 col-lg-3 footer-link">
             <h5 class="text-uppercase text-white mt-5"><strong>Pets</strong></h5>
             <ul>
-                <li class="footer-item"><a href="{% url 'items' %}?type=dog_food,dog_treats,dog_toys,dog_beds,dog_flea_and_tick">Dogs</a></li>
-                <li class="footer-item"><a href="{% url 'items' %}?type=cat_food,cat_furniture,cat_beds,litter,cat_flea_and_tick">Cats</a></li>
-                <li class="footer-item"><a href="{% url 'items' %}?type=food_and_treats,cages_and_habitats,beds_and_hideaways,bedding_and_litter,toys_and_habitat_accessories">Small pets</a></li>
-                <li class="footer-item"><a href="{% url 'items' %}?type=bird_cages,bird_food,bird_toys,perches_and_playstands,bird_treats">Birds</a></li>
-                <li class="footer-item"><a href="{% url 'items' %}?type=aquariums,filters,sand_and_gravel,water_care,fish_food">Fish</a></li>
-                <li class="footer-item"><a href="{% url 'items' %}?type=terrariums_and_tanks,reptile_food,reptile_decor_and_hideaways,reptile_substrate_and_bedding,reptile_cleanup_and_odor_control">Reptiles</a></li>
-                <li class="footer-item"><a href="{% url 'items' %}?type=dog_items_on_sale,cat_items_on_sale,small_pet_items_on_sale,bird_items_on_sale,fish_items_on_sale,reptile_items_on_sale" >On sale</a></li>
+                <li class="footer-item"><a
+                        href="{% url 'items' %}?type=dog_food,dog_treats,dog_toys,dog_beds,dog_flea_and_tick">Dogs</a>
+                </li>
+                <li class="footer-item"><a
+                        href="{% url 'items' %}?type=cat_food,cat_furniture,cat_beds,litter,cat_flea_and_tick">Cats</a>
+                </li>
+                <li class="footer-item"><a
+                        href="{% url 'items' %}?type=food_and_treats,cages_and_habitats,beds_and_hideaways,bedding_and_litter,toys_and_habitat_accessories">Small
+                        pets</a></li>
+                <li class="footer-item"><a
+                        href="{% url 'items' %}?type=bird_cages,bird_food,bird_toys,perches_and_playstands,bird_treats">Birds</a>
+                </li>
+                <li class="footer-item"><a
+                        href="{% url 'items' %}?type=aquariums,filters,sand_and_gravel,water_care,fish_food">Fish</a>
+                </li>
+                <li class="footer-item"><a
+                        href="{% url 'items' %}?type=terrariums_and_tanks,reptile_food,reptile_decor_and_hideaways,reptile_substrate_and_bedding,reptile_cleanup_and_odor_control">Reptiles</a>
+                </li>
+                <li class="footer-item"><a
+                        href="{% url 'items' %}?type=dog_items_on_sale,cat_items_on_sale,small_pet_items_on_sale,bird_items_on_sale,fish_items_on_sale,reptile_items_on_sale">On
+                        sale</a></li>
             </ul>
         </div>
         <div class="col-12 col-sm-6 col-lg-3 footer-link">
@@ -53,13 +67,13 @@
             <ul>
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                    <li class="footer-item"><a href="{% url 'add_item' %}">Item Management</a></li>
+                <li class="footer-item"><a href="{% url 'add_item' %}">Item Management</a></li>
                 {% endif %}
-                    <li class="footer-item"><a href="{% url 'profile' %}">My Profile</a></li>
-                    <li class="footer-item"><a href="{% url 'account_logout' %}">Logout</a></li>
+                <li class="footer-item"><a href="{% url 'profile' %}">My Profile</a></li>
+                <li class="footer-item"><a href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
-                    <li class="footer-item"><a href="{% url 'account_signup' %}">Register</a></li>
-                    <li class="footer-item"><a href="{% url 'account_login' %}">Login</a></li>
+                <li class="footer-item"><a href="{% url 'account_signup' %}">Register</a></li>
+                <li class="footer-item"><a href="{% url 'account_login' %}">Login</a></li>
                 {% endif %}
             </ul>
         </div>

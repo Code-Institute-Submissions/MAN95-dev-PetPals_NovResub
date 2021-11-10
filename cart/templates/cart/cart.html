@@ -37,11 +37,14 @@ Cart
                                             <a class="cart-product-name"
                                                 href="{% url 'item_detail' item.item.id %}">{{ item.item.name }}</a>
                                             {% if item.item.onsale %}
-                                                <p class="my-0"><strong>Price Each: </strong>${{ item.item.onsale_price  }}</p>
-                                                <p><strong>Subtotal: </strong>${{ item.item.onsale_price | calc_subtotal:item.quantity }}</p>
+                                            <p class="my-0"><strong>Price Each: </strong>${{ item.item.onsale_price  }}
+                                            </p>
+                                            <p><strong>Subtotal:
+                                                </strong>${{ item.item.onsale_price | calc_subtotal:item.quantity }}</p>
                                             {% else %}
-                                                <p class="my-0"><strong>Price Each: </strong>${{ item.item.price  }}</p>
-                                                <p><strong>Subtotal: </strong>${{ item.item.price | calc_subtotal:item.quantity }}</p>
+                                            <p class="my-0"><strong>Price Each: </strong>${{ item.item.price  }}</p>
+                                            <p><strong>Subtotal:
+                                                </strong>${{ item.item.price | calc_subtotal:item.quantity }}</p>
                                             {% endif %}
                                             <form class="form update-form mb-3" method="POST"
                                                 action="{% url 'adjust_cart' item.item_id %}">
@@ -49,8 +52,9 @@ Cart
                                                 <div class="quantity input-group">
                                                     Qty:
                                                     <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                            data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0"
+                                                            data-item_id="{{ item.item_id }}"
+                                                            id="decrement-qty_{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-minus fa-sm"></i>
                                                             </span>
@@ -62,7 +66,8 @@ Cart
                                                         id="id_qty_{{ item.item_id }}">
                                                     <div class="input-group-append">
                                                         <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                            data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                            data-item_id="{{ item.item_id }}"
+                                                            id="increment-qty_{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-plus fa-sm"></i>
                                                             </span>
@@ -84,11 +89,13 @@ Cart
                                             </a>
                                         </div>
                                         <p class="upper-text cart-total">
-                                        {% if item.item.onsale %}
-                                            <p class="my-0 font-weight-bold">${{ item.item.onsale_price | calc_subtotal:item.quantity }}</p>
-                                        {% else %}
-                                            <p class="my-0 font-weight-bold">${{ item.item.price | calc_subtotal:item.quantity }}</p>
-                                        {% endif %}
+                                            {% if item.item.onsale %}
+                                            <p class="my-0 font-weight-bold">
+                                                ${{ item.item.onsale_price | calc_subtotal:item.quantity }}</p>
+                                            {% else %}
+                                            <p class="my-0 font-weight-bold">
+                                                ${{ item.item.price | calc_subtotal:item.quantity }}</p>
+                                            {% endif %}
                                     </div>
                                 </div>
                             </div>

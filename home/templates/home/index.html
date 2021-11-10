@@ -7,30 +7,30 @@
 {% block content %}
 <!-- Home page carousel -->
 <section>
-<div id="home-page-carousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#home-page-carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#home-page-carousel" data-slide-to="1"></li>
-        <li data-target="#home-page-carousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item home-carousel-item active">
-            <div id="carousel-img-1" class="d-block w-100 carousel-image">
-                <img class="img-responsive" src="{{ MEDIA_URL }}carousel-img-1.jpg" alt="">
+    <div id="home-page-carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#home-page-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#home-page-carousel" data-slide-to="1"></li>
+            <li data-target="#home-page-carousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item home-carousel-item active">
+                <div id="carousel-img-1" class="d-block w-100 carousel-image">
+                    <img class="img-responsive" src="{{ MEDIA_URL }}carousel-img-1.jpg" alt="">
+                </div>
             </div>
-        </div>
-        <div class="carousel-item home-carousel-item">
-            <div id="carousel-img-2" class="d-block w-100 carousel-image">
-                <img class="img-responsive" src="{{ MEDIA_URL }}carousel-img-2.jpg" alt="">
+            <div class="carousel-item home-carousel-item">
+                <div id="carousel-img-2" class="d-block w-100 carousel-image">
+                    <img class="img-responsive" src="{{ MEDIA_URL }}carousel-img-2.jpg" alt="">
+                </div>
             </div>
-        </div>
-        <div class="carousel-item home-carousel-item">
-            <div id="carousel-img-4" class="d-block w-100 carousel-image">
-                <img class="img-responsive" src="{{ MEDIA_URL }}carousel-img-4.jpg" alt="">
+            <div class="carousel-item home-carousel-item">
+                <div id="carousel-img-4" class="d-block w-100 carousel-image">
+                    <img class="img-responsive" src="{{ MEDIA_URL }}carousel-img-4.jpg" alt="">
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 
 <section id="index-staples-section">
@@ -45,7 +45,7 @@
                 <a class="white-underline" href="{% url 'item_detail' 20 %}">
                     <div class="index-staples-image mx-auto mt-4">
                         <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_11.12.22_AM.png" alt="">
-                    </div>   
+                    </div>
                 </a>
                 <p class="mt-3">JW Pet Chompion Heavyweight Dog Toy (Assorted)</p>
                 <p class="item-price font-weight-bold mb-0"><s>Was $7.99</s></p>
@@ -55,7 +55,7 @@
                 <a class="white-underline" href="{% url 'item_detail' 43 %}">
                     <div class="index-staples-image mx-auto mt-4">
                         <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_3.04.19_PM.png" alt="">
-                    </div>   
+                    </div>
                 </a>
                 <p class="mt-3">Petcurean Go! Fit + Free Cat Food - Chicken Turkey + Duck (4 lb)</p>
                 <p class="item-price font-weight-bold mb-0"><s>Was $25.99</s></p>
@@ -65,7 +65,7 @@
                 <a class="white-underline" href="{% url 'item_detail' 25 %}">
                     <div class="index-staples-image mx-auto mt-4">
                         <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_12.55.16_PM.png" alt="">
-                    </div>   
+                    </div>
                 </a>
                 <p class="mt-3">FurHaven Deep Dish Curly Fur Plush Donut Bed - Fresh Blueberry</p>
                 <p class="item-price font-weight-bold mb-0"><s>Was $66.93</s></p>
@@ -75,7 +75,7 @@
                 <a class="white-underline" href="{% url 'item_detail' 39 %}">
                     <div class="index-staples-image mx-auto mt-4">
                         <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_2.38.57_PM.png" alt="">
-                    </div>   
+                    </div>
                 </a>
                 <p class="mt-3">Furhaven Tiger Tough Double Decker Playground - Gray</p>
                 <p class="item-price font-weight-bold mb-0"><s>Was $117.33</s></p>
@@ -85,7 +85,7 @@
                 <a class="white-underline" href="{% url 'item_detail' 3 %}">
                     <div class="index-staples-image mx-auto mt-4">
                         <img src="{{ MEDIA_URL }}supreme-harry-yippees-4-2z-22.png" alt="">
-                    </div>   
+                    </div>
                 </a>
                 <p class="mt-3">Supreme Harry Yippees 4.2z</p>
                 <p class="item-price font-weight-bold mb-0"><s>Was $2.99</s></p>
@@ -95,7 +95,7 @@
                 <a class="white-underline" href="{% url 'item_detail' 9 %}">
                     <div class="index-staples-image mx-auto mt-4">
                         <img src="{{ MEDIA_URL }}snakebedding.png" alt="">
-                    </div>   
+                    </div>
                 </a>
                 <p class="mt-3">Zoo Med Aspen Snake Bedding (24 qt)</p>
                 <p class="item-price font-weight-bold mb-0"><s>Was $25.99</s></p>
@@ -105,7 +105,7 @@
                 <a class="white-underline" href="{% url 'item_detail' 8 %}">
                     <div class="index-staples-image mx-auto mt-4">
                         <img src="{{ MEDIA_URL }}fishfood_ngwPvU1.png" alt="">
-                    </div>   
+                    </div>
                 </a>
                 <p class="mt-3">Aqueon Betta Food (0.95 oz)</p>
                 <p class="item-price font-weight-bold mb-0"><s>Was $2.29</s></p>
@@ -115,83 +115,84 @@
                 <a class="white-underline" href="{% url 'item_detail' 14 %}">
                     <div class="index-staples-image mx-auto mt-4">
                         <img src="{{ MEDIA_URL }}Screen_Shot_2021-09-19_at_10.16.26_AM.png" alt="twelve month planner">
-                    </div>   
+                    </div>
                 </a>
                 <p class="mt-3">Purina Pro Plan Adult Shredded Blend Chicken & Rice Formula Dry Dog Food (6 lb)</p>
                 <p class="item-price font-weight-bold mb-0"><s>Was $15.99</s></p>
                 <p class="item-sale-price font-weight-bold mb-0">Now is $12.99</p>
             </div>
         </div>
-            <div class="text-center">
-                <a class="btn btn-yellow mt-5 mb-3" id="index-staples-button" 
-                    href="{% url 'items' %}?type=dog_items_on_sale,cat_items_on_sale,small_pet_items_on_sale,bird_items_on_sale,fish_items_on_sale,reptile_items_on_sale">See All On Sale</a>
-            </div>
-            <hr>
+        <div class="text-center">
+            <a class="btn btn-yellow mt-5 mb-3" id="index-staples-button"
+                href="{% url 'items' %}?type=dog_items_on_sale,cat_items_on_sale,small_pet_items_on_sale,bird_items_on_sale,fish_items_on_sale,reptile_items_on_sale">See
+                All On Sale</a>
+        </div>
+        <hr>
     </div>
 </section>
 
 <!-- Home page shop by pet -->
 <section>
     <div class="container">
-    <div>
-        <h3 class="logo-font text-center mt-3">Shop by pet</h3>
+        <div>
+            <h3 class="logo-font text-center mt-3">Shop by pet</h3>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
+                <a href="{% url 'items' %}?type=dog_food,dog_treats,dog_toys,dog_beds,dog_flea_and_tick"
+                    class="btn home-button">
+                    <span class="target showhim">
+                        <i class="fas fa-dog fa-2x"></i>
+                        <span class="showme">Dogs</span>
+                    </span>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
+                <a href="{% url 'items' %}?type=cat_food,cat_furniture,cat_beds,litter,cat_flea_and_tick"
+                    class="btn home-button">
+                    <span class="target showhim">
+                        <i class="fas fa-cat fa-2x"></i>
+                        <span class="showme">Cats</span>
+                    </span>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
+                <a href="{% url 'items' %}?type=food_and_treats,cages_and_habitats,beds_and_hideaways,bedding_and_litter,toys_and_habitat_accessories"
+                    class="btn home-button">
+                    <span class="target showhim">
+                        <i class="fas fa-otter fa-2x"></i>
+                        <span class="showme">Small Pets</span>
+                    </span>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
+                <a href="{% url 'items' %}?type=bird_cages,bird_food,bird_toys,perches_and_playstands,bird_treats"
+                    class="btn home-button">
+                    <span class="target showhim">
+                        <i class="fas fa-dove fa-2x"></i>
+                        <span class="showme">Birds</span>
+                    </span>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
+                <a href="{% url 'items' %}?type=aquariums,filters,sand_and_gravel,water_care,fish_food"
+                    class="btn home-button">
+                    <span class="target showhim">
+                        <i class="fas fa-fish fa-2x"></i>
+                        <span class="showme">Fish</span>
+                    </span>
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
+                <a href="{% url 'items' %}?type=terrariums_and_tanks,reptile_food,reptile_decor_and_hideaways,reptile_substrate_and_bedding,reptile_cleanup_and_odor_control"
+                    class="btn home-button">
+                    <span class="target showhim">
+                        <i class="fas fa-dragon fa-2x"></i>
+                        <span class="showme">Reptiles</span>
+                    </span>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="row">
-        <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
-        <a href="{% url 'items' %}?type=dog_food,dog_treats,dog_toys,dog_beds,dog_flea_and_tick" 
-            class="btn home-button">
-            <span class="target showhim">
-                <i class="fas fa-dog fa-2x"></i>
-                <span class="showme">Dogs</span>
-            </span>   
-        </a>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
-            <a href="{% url 'items' %}?type=cat_food,cat_furniture,cat_beds,litter,cat_flea_and_tick"
-                class="btn home-button">
-                <span class="target showhim">
-                    <i class="fas fa-cat fa-2x"></i>
-                    <span class="showme">Cats</span>
-                </span>
-            </a>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
-            <a href="{% url 'items' %}?type=food_and_treats,cages_and_habitats,beds_and_hideaways,bedding_and_litter,toys_and_habitat_accessories"
-                class="btn home-button">
-                <span class="target showhim">
-                    <i class="fas fa-otter fa-2x"></i>
-                    <span class="showme">Small Pets</span>
-                </span>
-            </a>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
-            <a href="{% url 'items' %}?type=bird_cages,bird_food,bird_toys,perches_and_playstands,bird_treats"
-                class="btn home-button">
-                <span class="target showhim">
-                    <i class="fas fa-dove fa-2x"></i>
-                    <span class="showme">Birds</span>
-                </span>
-            </a>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
-            <a href="{% url 'items' %}?type=aquariums,filters,sand_and_gravel,water_care,fish_food"
-                class="btn home-button">
-                <span class="target showhim">
-                    <i class="fas fa-fish fa-2x"></i>
-                    <span class="showme">Fish</span>
-                </span>
-            </a>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 pt-3 pb-3 d-flex justify-content-center">
-            <a href="{% url 'items' %}?type=terrariums_and_tanks,reptile_food,reptile_decor_and_hideaways,reptile_substrate_and_bedding,reptile_cleanup_and_odor_control"
-                class="btn home-button">
-                <span class="target showhim">
-                    <i class="fas fa-dragon fa-2x"></i>
-                    <span class="showme">Reptiles</span>
-                </span>
-            </a>
-        </div>   
-    </div>
-</div>
 </section>
 {% endblock %}

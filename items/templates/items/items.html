@@ -7,9 +7,9 @@
     <div class="row">
         <div class="col text-center mt-3">
             {% for c in current_types %}
-                <a class="text-decoration-none" href="{% url 'items' %}?type={{ c.name }}">
-                    <span class="p-2 mt-2 badge btn btn-blue-outline rounded-1">{{ c.friendly_name }}</span>
-                </a>
+            <a class="text-decoration-none" href="{% url 'items' %}?type={{ c.name }}">
+                <span class="p-2 mt-2 badge btn btn-blue-outline rounded-1">{{ c.friendly_name }}</span>
+            </a>
             {% endfor %}
             <hr class="w-50 mb-1">
         </div>
@@ -20,108 +20,119 @@
             <div class="row mt-1 mb-2">
                 <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                     <div class="sort-select-wrapper w-50">
-                        <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                            <option value="type_asc" {% if current_sorting == 'type_asc' %}selected{% endif %}>Category (A-Z)</option>
-                            <option value="type_desc" {% if current_sorting == 'type_desc' %}selected{% endif %}>Category (Z-A)</option>
+                        <select id="sort-selector"
+                            class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
+                            </option>
+                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
+                                (low to high)</option>
+                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
+                                (high to low)</option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name
+                                (A-Z)</option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name
+                                (Z-A)</option>
+                            <option value="type_asc" {% if current_sorting == 'type_asc' %}selected{% endif %}>Category
+                                (A-Z)</option>
+                            <option value="type_desc" {% if current_sorting == 'type_desc' %}selected{% endif %}>
+                                Category (Z-A)</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="text-muted mt-3 text-center text-md-left">
-                        {{ items|length }} Items{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                        {{ items|length }} Items{% if search_term %} found for
+                        <strong>"{{ search_term }}"</strong>{% endif %}
                     </p>
                 </div>
             </div>
             <div class="row">
-                    {% for item in items %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                {% if item.image %}
-                                <a href="{% url 'item_detail' item.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
-                                </a>
-                                {% else %}
-                                <a href="{% url 'item_detail' item.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
-                                </a>
-                                {% endif %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ item.name }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            {% if item.onsale %}
-                                                <p class="mb-0 text-left item-price font-weight-bold"><s>Was ${{item.price }}</s></p>
-                                                <p class="mb-0 text-left item-sale-price font-weight-bold">Now is ${{item.onsale_price }}</p>
-                                            {% else %}
-                                                <p class="mb-0 text-left item-price font-weight-bold">${{item.price }}</p>
-                                            {% endif %}
-                                            {% if request.user.is_superuser %}
-                                            <small class="ml-3">
-                                                <a href="{% url 'edit_item' item.id %}">Edit</a> | 
-                                                <a class="text-danger" href="{% url 'delete_item' item.id %}">Delete</a>
-                                            </small>
-                                            {% endif %}
-                                        </div>
-                                    </div>
+                {% for item in items %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card h-100 border-0">
+                        {% if item.image %}
+                        <a href="{% url 'item_detail' item.id %}">
+                            <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'item_detail' item.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body pb-0">
+                            <p class="mb-0">{{ item.name }}</p>
+                        </div>
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    {% if item.onsale %}
+                                    <p class="mb-0 text-left item-price font-weight-bold"><s>Was ${{item.price }}</s>
+                                    </p>
+                                    <p class="mb-0 text-left item-sale-price font-weight-bold">Now is
+                                        ${{item.onsale_price }}</p>
+                                    {% else %}
+                                    <p class="mb-0 text-left item-price font-weight-bold">${{item.price }}</p>
+                                    {% endif %}
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <a href="{% url 'edit_item' item.id %}">Edit</a> |
+                                        <a class="text-danger" href="{% url 'delete_item' item.id %}">Delete</a>
+                                    </small>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                    </div>
                 </div>
+                {% if forloop.counter|divisibleby:1 %}
+                <div class="col-12 d-sm-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                <div class="col-12 d-none d-xl-block mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script>
-        $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
+{{ block.super }}
+<script>
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
 
-            var selectedVal = selector.val();
-            if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
 
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
 
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
 
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
 {% endblock %}

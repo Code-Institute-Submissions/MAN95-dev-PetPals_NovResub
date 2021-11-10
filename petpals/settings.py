@@ -124,7 +124,7 @@ if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-else:    
+else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -137,19 +137,19 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 
+        'NAME':
         'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 
+        'NAME':
         'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 
+        'NAME':
         'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 
+        'NAME':
         'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
@@ -176,7 +176,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
     # Cache control
